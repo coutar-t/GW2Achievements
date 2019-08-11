@@ -25,6 +25,56 @@ import AppKit
 
 
 
+class AchievementItemProtocolMock: AchievementItemProtocol {
+    var name: String {
+        get { return underlyingName }
+        set(value) { underlyingName = value }
+    }
+    var underlyingName: String!
+    var iconUrl: String {
+        get { return underlyingIconUrl }
+        set(value) { underlyingIconUrl = value }
+    }
+    var underlyingIconUrl: String!
+
+    init() {}
+
+    init(name: String, iconUrl: String) {
+      self.name = name
+      self.iconUrl = iconUrl
+    }
+}
+class AchievementResponseProtocolMock: AchievementResponseProtocol {
+    var name: String {
+        get { return underlyingName }
+        set(value) { underlyingName = value }
+    }
+    var underlyingName: String!
+    var description: String {
+        get { return underlyingDescription }
+        set(value) { underlyingDescription = value }
+    }
+    var underlyingDescription: String!
+    var requirement: String {
+        get { return underlyingRequirement }
+        set(value) { underlyingRequirement = value }
+    }
+    var underlyingRequirement: String!
+    var iconUrl: String {
+        get { return underlyingIconUrl }
+        set(value) { underlyingIconUrl = value }
+    }
+    var underlyingIconUrl: String!
+
+    init() {}
+
+    init(name: String, description: String, requirement: String, iconUrl: String) {
+      self.name = name
+      self.description = description
+      self.requirement = requirement
+      self.iconUrl = iconUrl
+    }
+}
 class AchievementsCategoryResponseProtocolMock: AchievementsCategoryResponseProtocol {
     var name: String {
         get { return underlyingName }
@@ -45,6 +95,263 @@ class AchievementsCategoryResponseProtocolMock: AchievementsCategoryResponseProt
       self.icon = icon
       self.achievementsIds = achievementsIds
     }
+}
+class AchievementsListInteractorInputMock: AchievementsListInteractorInput {
+    var output: AchievementsListInteractorOutput?
+
+    //MARK: - retrieve
+
+    var retrieveCallsCount = 0
+    var retrieveCalled: Bool {
+        return retrieveCallsCount > 0
+    }
+    var retrieveClosure: (() -> Void)?
+
+    func retrieve() {
+        retrieveCallsCount += 1
+        retrieveClosure?()
+    }
+
+    //MARK: - numberOfCategories
+
+    var numberOfCategoriesCallsCount = 0
+    var numberOfCategoriesCalled: Bool {
+        return numberOfCategoriesCallsCount > 0
+    }
+    var numberOfCategoriesReturnValue: Int!
+    var numberOfCategoriesClosure: (() -> Int)?
+
+    func numberOfCategories() -> Int {
+        numberOfCategoriesCallsCount += 1
+        return numberOfCategoriesClosure.map({ $0() }) ?? numberOfCategoriesReturnValue
+    }
+
+    //MARK: - numberOfAchievements
+
+    var numberOfAchievementsForCallsCount = 0
+    var numberOfAchievementsForCalled: Bool {
+        return numberOfAchievementsForCallsCount > 0
+    }
+    var numberOfAchievementsForReceivedCategory: Int?
+    var numberOfAchievementsForReceivedInvocations: [Int] = []
+    var numberOfAchievementsForReturnValue: Int!
+    var numberOfAchievementsForClosure: ((Int) -> Int)?
+
+    func numberOfAchievements(for category: Int) -> Int {
+        numberOfAchievementsForCallsCount += 1
+        numberOfAchievementsForReceivedCategory = category
+        numberOfAchievementsForReceivedInvocations.append(category)
+        return numberOfAchievementsForClosure.map({ $0(category) }) ?? numberOfAchievementsForReturnValue
+    }
+
+    //MARK: - achievement
+
+    var achievementAtForCallsCount = 0
+    var achievementAtForCalled: Bool {
+        return achievementAtForCallsCount > 0
+    }
+    var achievementAtForReceivedArguments: (index: Int, category: Int)?
+    var achievementAtForReceivedInvocations: [(index: Int, category: Int)] = []
+    var achievementAtForReturnValue: AchievementItemProtocol?
+    var achievementAtForClosure: ((Int, Int) -> AchievementItemProtocol?)?
+
+    func achievement(at index: Int, for category: Int) -> AchievementItemProtocol? {
+        achievementAtForCallsCount += 1
+        achievementAtForReceivedArguments = (index: index, category: category)
+        achievementAtForReceivedInvocations.append((index: index, category: category))
+        return achievementAtForClosure.map({ $0(index, category) }) ?? achievementAtForReturnValue
+    }
+
+}
+class AchievementsListInteractorModuleFactoryProtocolMock: AchievementsListInteractorModuleFactoryProtocol {
+
+    //MARK: - interactor
+
+    var interactorRepositoryCallsCount = 0
+    var interactorRepositoryCalled: Bool {
+        return interactorRepositoryCallsCount > 0
+    }
+    var interactorRepositoryReceivedRepository: AchievementsListRepositoryInput?
+    var interactorRepositoryReceivedInvocations: [AchievementsListRepositoryInput] = []
+    var interactorRepositoryReturnValue: AchievementsListInteractorInput!
+    var interactorRepositoryClosure: ((AchievementsListRepositoryInput) -> AchievementsListInteractorInput)?
+
+    func interactor(repository: AchievementsListRepositoryInput) -> AchievementsListInteractorInput {
+        interactorRepositoryCallsCount += 1
+        interactorRepositoryReceivedRepository = repository
+        interactorRepositoryReceivedInvocations.append(repository)
+        return interactorRepositoryClosure.map({ $0(repository) }) ?? interactorRepositoryReturnValue
+    }
+
+}
+class AchievementsListInteractorOutputMock: AchievementsListInteractorOutput {
+
+    //MARK: - setDefaultValues
+
+    var setDefaultValuesCallsCount = 0
+    var setDefaultValuesCalled: Bool {
+        return setDefaultValuesCallsCount > 0
+    }
+    var setDefaultValuesClosure: (() -> Void)?
+
+    func setDefaultValues() {
+        setDefaultValuesCallsCount += 1
+        setDefaultValuesClosure?()
+    }
+
+    //MARK: - setTitle
+
+    var setTitleCallsCount = 0
+    var setTitleCalled: Bool {
+        return setTitleCallsCount > 0
+    }
+    var setTitleReceivedTitle: String?
+    var setTitleReceivedInvocations: [String] = []
+    var setTitleClosure: ((String) -> Void)?
+
+    func setTitle(_ title: String) {
+        setTitleCallsCount += 1
+        setTitleReceivedTitle = title
+        setTitleReceivedInvocations.append(title)
+        setTitleClosure?(title)
+    }
+
+    //MARK: - updateAchievementsList
+
+    var updateAchievementsListCallsCount = 0
+    var updateAchievementsListCalled: Bool {
+        return updateAchievementsListCallsCount > 0
+    }
+    var updateAchievementsListClosure: (() -> Void)?
+
+    func updateAchievementsList() {
+        updateAchievementsListCallsCount += 1
+        updateAchievementsListClosure?()
+    }
+
+    //MARK: - notifyLoading
+
+    var notifyLoadingCallsCount = 0
+    var notifyLoadingCalled: Bool {
+        return notifyLoadingCallsCount > 0
+    }
+    var notifyLoadingClosure: (() -> Void)?
+
+    func notifyLoading() {
+        notifyLoadingCallsCount += 1
+        notifyLoadingClosure?()
+    }
+
+    //MARK: - notifyServerError
+
+    var notifyServerErrorCallsCount = 0
+    var notifyServerErrorCalled: Bool {
+        return notifyServerErrorCallsCount > 0
+    }
+    var notifyServerErrorClosure: (() -> Void)?
+
+    func notifyServerError() {
+        notifyServerErrorCallsCount += 1
+        notifyServerErrorClosure?()
+    }
+
+    //MARK: - notifyNetworkError
+
+    var notifyNetworkErrorCallsCount = 0
+    var notifyNetworkErrorCalled: Bool {
+        return notifyNetworkErrorCallsCount > 0
+    }
+    var notifyNetworkErrorClosure: (() -> Void)?
+
+    func notifyNetworkError() {
+        notifyNetworkErrorCallsCount += 1
+        notifyNetworkErrorClosure?()
+    }
+
+    //MARK: - notifyUnknownError
+
+    var notifyUnknownErrorCallsCount = 0
+    var notifyUnknownErrorCalled: Bool {
+        return notifyUnknownErrorCallsCount > 0
+    }
+    var notifyUnknownErrorClosure: (() -> Void)?
+
+    func notifyUnknownError() {
+        notifyUnknownErrorCallsCount += 1
+        notifyUnknownErrorClosure?()
+    }
+
+    //MARK: - notifyNoDataError
+
+    var notifyNoDataErrorCallsCount = 0
+    var notifyNoDataErrorCalled: Bool {
+        return notifyNoDataErrorCallsCount > 0
+    }
+    var notifyNoDataErrorClosure: (() -> Void)?
+
+    func notifyNoDataError() {
+        notifyNoDataErrorCallsCount += 1
+        notifyNoDataErrorClosure?()
+    }
+
+}
+class AchievementsListRepositoryInputMock: AchievementsListRepositoryInput {
+    var output: AchievementsListRepositoryOutput?
+
+    //MARK: - get
+
+    var getForCallsCount = 0
+    var getForCalled: Bool {
+        return getForCallsCount > 0
+    }
+    var getForReceivedIds: [String]?
+    var getForReceivedInvocations: [[String]] = []
+    var getForClosure: (([String]) -> Void)?
+
+    func get(for ids: [String]) {
+        getForCallsCount += 1
+        getForReceivedIds = ids
+        getForReceivedInvocations.append(ids)
+        getForClosure?(ids)
+    }
+
+}
+class AchievementsListRepositoryOutputMock: AchievementsListRepositoryOutput {
+
+    //MARK: - didGet
+
+    var didGetAchievementsCallsCount = 0
+    var didGetAchievementsCalled: Bool {
+        return didGetAchievementsCallsCount > 0
+    }
+    var didGetAchievementsReceivedAchievements: [AchievementResponseProtocol]?
+    var didGetAchievementsReceivedInvocations: [[AchievementResponseProtocol]] = []
+    var didGetAchievementsClosure: (([AchievementResponseProtocol]) -> Void)?
+
+    func didGet(achievements: [AchievementResponseProtocol]) {
+        didGetAchievementsCallsCount += 1
+        didGetAchievementsReceivedAchievements = achievements
+        didGetAchievementsReceivedInvocations.append(achievements)
+        didGetAchievementsClosure?(achievements)
+    }
+
+    //MARK: - didHandleError
+
+    var didHandleErrorErrorCallsCount = 0
+    var didHandleErrorErrorCalled: Bool {
+        return didHandleErrorErrorCallsCount > 0
+    }
+    var didHandleErrorErrorReceivedError: AchievementsListRepositoryError?
+    var didHandleErrorErrorReceivedInvocations: [AchievementsListRepositoryError] = []
+    var didHandleErrorErrorClosure: ((AchievementsListRepositoryError) -> Void)?
+
+    func didHandleError(error: AchievementsListRepositoryError) {
+        didHandleErrorErrorCallsCount += 1
+        didHandleErrorErrorReceivedError = error
+        didHandleErrorErrorReceivedInvocations.append(error)
+        didHandleErrorErrorClosure?(error)
+    }
+
 }
 class CategoriesGroupResponseProtocolMock: CategoriesGroupResponseProtocol {
     var name: String {

@@ -11,6 +11,7 @@ import Foundation
 // sourcery: AutoMockableBusinessLogic
 public protocol AchievementsListInteractorOutput: class {
     func setDefaultValues()
+    func setTitle(_ title: String)
     func updateAchievementsList()
     func notifyLoading()
     func notifyServerError()

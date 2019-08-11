@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+// sourcery: AutoMockableBusinessLogic
+public protocol AchievementsListInteractorModuleFactoryProtocol {
+    func interactor(repository: AchievementsListRepositoryInput) -> AchievementsListInteractorInput
+}
+
+public class AchievementsListInteractorModuleFactory: AchievementsListInteractorModuleFactoryProtocol {
+    public init() {}
+
+    public func interactor(repository: AchievementsListRepositoryInput) -> AchievementsListInteractorInput {
+        let currentRepository = CurrentCategoryRepository.shared
+        let interactor = AchievementsListInteractor(currentRepository: currentRepository, repository: repository)
+        currentRepository.output = interactor
+        repository.output = interactor
+
+        return interactor
+    }
+}

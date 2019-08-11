@@ -16,7 +16,7 @@ public protocol AchievementsListRepositoryInput: class {
 
 // sourcery: AutoMockableBusinessLogic
 public protocol AchievementsListRepositoryOutput: class {
-    func didGet(Achievements: [AchievementResponseProtocol])
+    func didGet(achievements: [AchievementResponseProtocol])
     func didHandleError(error: AchievementsListRepositoryError)
 }
 
