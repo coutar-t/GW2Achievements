@@ -82,5 +82,5 @@ extension AchievementsListInteractor: AchievementsListRepositoryOutput {
 
 private struct AchievementItem: AchievementItemProtocol {
     var name: String
-    var iconUrl: String
+    var iconUrl: String?
 }

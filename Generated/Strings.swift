@@ -12,6 +12,35 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
 
+  internal enum Achievements {
+    internal enum List {
+      internal enum Error {
+        internal enum Network {
+          /// Oops it seems we can't access internet
+          internal static let message = L10n.tr("Localizable", "achievements.list.error.network.message")
+          /// Retry
+          internal static let retry = L10n.tr("Localizable", "achievements.list.error.network.retry")
+        }
+        internal enum Server {
+          /// Oops something went wrong on the server
+          internal static let message = L10n.tr("Localizable", "achievements.list.error.server.message")
+          /// Retry
+          internal static let retry = L10n.tr("Localizable", "achievements.list.error.server.retry")
+        }
+        internal enum Unknown {
+          /// Oops something went wrong
+          internal static let message = L10n.tr("Localizable", "achievements.list.error.unknown.message")
+          /// Retry
+          internal static let retry = L10n.tr("Localizable", "achievements.list.error.unknown.retry")
+        }
+      }
+      internal enum Title {
+        /// Achievements
+        internal static let `default` = L10n.tr("Localizable", "achievements.list.title.default")
+      }
+    }
+  }
+
   internal enum Categories {
     internal enum List {
       /// Categories

@@ -12,9 +12,12 @@ import GW2AchievementsBusinessLogic
 class CategoriesGroupsListPresenter {
     weak var output: CategoriesGroupsListPresenterOutput?
     private let interactor: CategoriesGroupsListInteractorInput
+    private let router: CategoriesGroupsListRouterProtocol
 
-    init(interactor: CategoriesGroupsListInteractorInput) {
+    init(interactor: CategoriesGroupsListInteractorInput,
+         router: CategoriesGroupsListRouterProtocol) {
         self.interactor = interactor
+        self.router = router
     }
 }
 
@@ -43,6 +46,10 @@ extension CategoriesGroupsListPresenter: CategoriesGroupsListPresenterInput {
             return CategoryViewModel(title: NSAttributedString(string: "", attributes: [.font: UIFont.preferredFont(forTextStyle: .title1)]), iconUrl: "")
         }
         return CategoryViewModel(title: NSAttributedString(string: item.name, attributes: [.font: UIFont.preferredFont(forTextStyle: .title1)]), iconUrl: item.iconUrl)
+    }
+
+    func selectRow(for row: Int, at section: Int) {
+        interactor.selectCategory(at: row, for: section)
     }
 }
 
@@ -78,6 +85,10 @@ extension CategoriesGroupsListPresenter: CategoriesGroupsListInteractorOutput {
     func notifyNoDataError() {
         self.output?.hideLoading()
         self.output?.updateCategoriesGroups()
+    }
+
+    func routeToAchievementsList() {
+        router.routeToAchievementsList()
     }
 }
 

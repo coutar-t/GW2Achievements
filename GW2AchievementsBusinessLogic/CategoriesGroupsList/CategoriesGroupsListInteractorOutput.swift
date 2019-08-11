@@ -17,4 +17,5 @@ public protocol CategoriesGroupsListInteractorOutput: class {
     func notifyNetworkError()
     func notifyUnknownError()
     func notifyNoDataError()
+    func routeToAchievementsList()
 }

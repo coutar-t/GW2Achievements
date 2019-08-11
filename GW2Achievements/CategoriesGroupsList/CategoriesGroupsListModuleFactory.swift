@@ -23,8 +23,10 @@ class CategoriesGroupsListModuleFactory {
                                                         getAchievementCategoriesListAPIWrapper: getAchievementsCategoriesListAPIWrapper)
 
         let interactor = CategoriesGroupsListInteractorModuleFactory().interactor(repository: repository)
+        let router = CategoriesGroupsListRouter()
+        router.parentViewController = viewController
 
-        let presenter = CategoriesGroupsListPresenter(interactor: interactor)
+        let presenter = CategoriesGroupsListPresenter(interactor: interactor, router: router)
         interactor.output = presenter
 
         viewController.presenter = presenter

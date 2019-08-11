@@ -17,7 +17,8 @@ public class CategoriesGroupsListInteractorModuleFactory: CategoriesGroupsListIn
     public init() {}
 
     public func interactor(repository: CategoriesGroupsListRepositoryInput) -> CategoriesGroupsListInteractorInput {
-        let interactor = CategoriesGroupsListInteractor(repository: repository)
+        let interactor = CategoriesGroupsListInteractor(repository: repository,
+                                                        currentAchievementRepository: CurrentCategoryRepository.shared)
         repository.output = interactor
         return interactor
     }

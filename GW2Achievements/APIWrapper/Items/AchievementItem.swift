@@ -37,8 +37,9 @@ import Foundation
 struct AchievementItem: Codable {
     var id: Int
     var name: String
-    var icon: String
+    var icon: String?
     var description: String
+    var requirement: String
     var locked_text: String
     var type: String
     var flags: [String]

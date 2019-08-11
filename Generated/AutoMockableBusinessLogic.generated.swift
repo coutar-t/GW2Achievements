@@ -31,15 +31,11 @@ class AchievementItemProtocolMock: AchievementItemProtocol {
         set(value) { underlyingName = value }
     }
     var underlyingName: String!
-    var iconUrl: String {
-        get { return underlyingIconUrl }
-        set(value) { underlyingIconUrl = value }
-    }
-    var underlyingIconUrl: String!
+    var iconUrl: String?
 
     init() {}
 
-    init(name: String, iconUrl: String) {
+    init(name: String, iconUrl: String?) {
       self.name = name
       self.iconUrl = iconUrl
     }
@@ -60,15 +56,11 @@ class AchievementResponseProtocolMock: AchievementResponseProtocol {
         set(value) { underlyingRequirement = value }
     }
     var underlyingRequirement: String!
-    var iconUrl: String {
-        get { return underlyingIconUrl }
-        set(value) { underlyingIconUrl = value }
-    }
-    var underlyingIconUrl: String!
+    var iconUrl: String?
 
     init() {}
 
-    init(name: String, description: String, requirement: String, iconUrl: String) {
+    init(name: String, description: String, requirement: String, iconUrl: String?) {
       self.name = name
       self.description = description
       self.requirement = requirement
@@ -452,6 +444,23 @@ class CategoriesGroupsListInteractorInputMock: CategoriesGroupsListInteractorInp
         return categoryAtForClosure.map({ $0(index, category) }) ?? categoryAtForReturnValue
     }
 
+    //MARK: - selectCategory
+
+    var selectCategoryAtForCallsCount = 0
+    var selectCategoryAtForCalled: Bool {
+        return selectCategoryAtForCallsCount > 0
+    }
+    var selectCategoryAtForReceivedArguments: (index: Int, category: Int)?
+    var selectCategoryAtForReceivedInvocations: [(index: Int, category: Int)] = []
+    var selectCategoryAtForClosure: ((Int, Int) -> Void)?
+
+    func selectCategory(at index: Int, for category: Int) {
+        selectCategoryAtForCallsCount += 1
+        selectCategoryAtForReceivedArguments = (index: index, category: category)
+        selectCategoryAtForReceivedInvocations.append((index: index, category: category))
+        selectCategoryAtForClosure?(index, category)
+    }
+
 }
 class CategoriesGroupsListInteractorModuleFactoryProtocolMock: CategoriesGroupsListInteractorModuleFactoryProtocol {
 
@@ -565,6 +574,19 @@ class CategoriesGroupsListInteractorOutputMock: CategoriesGroupsListInteractorOu
     func notifyNoDataError() {
         notifyNoDataErrorCallsCount += 1
         notifyNoDataErrorClosure?()
+    }
+
+    //MARK: - routeToAchievementsList
+
+    var routeToAchievementsListCallsCount = 0
+    var routeToAchievementsListCalled: Bool {
+        return routeToAchievementsListCallsCount > 0
+    }
+    var routeToAchievementsListClosure: (() -> Void)?
+
+    func routeToAchievementsList() {
+        routeToAchievementsListCallsCount += 1
+        routeToAchievementsListClosure?()
     }
 
 }

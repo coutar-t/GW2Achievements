@@ -20,7 +20,7 @@ class GetAchievementsListAPIWrapper: GetAchievementsListAPIWrapperProtocol {
     func fetchAchievements(ids: [String],
                            success: @escaping ([AchievementItem]) -> Void,
                                      failure: @escaping (Error) -> Void) {
-        guard let url = URL(string: "https://api.guildwars2.com/v2/achievements/?ids=\(ids.joined(separator: ","))&lang=\(locale.languageCode ?? "en")") else { return }
+        guard let url = URL(string: "https://api.guildwars2.com/v2/achievements?ids=\(ids.joined(separator: ","))&lang=\(locale.languageCode ?? "en")") else { return }
 
         DispatchQueue.global(qos: .background).async {
             self.apiWrapper.fetch(url: url,

@@ -35,6 +35,17 @@
 		7838427323005E7900B88859 /* GetAchievementsListAPIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838427223005E7900B88859 /* GetAchievementsListAPIWrapper.swift */; };
 		7838427523005EC700B88859 /* AchievementItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838427423005EC700B88859 /* AchievementItem.swift */; };
 		7838427723005FCA00B88859 /* AchievementsListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838427623005FCA00B88859 /* AchievementsListRepository.swift */; };
+		7838428323006F8A00B88859 /* AchievementsListModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838428223006F8A00B88859 /* AchievementsListModuleFactory.swift */; };
+		7838428523006FA300B88859 /* AchievementsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838428423006FA300B88859 /* AchievementsListPresenter.swift */; };
+		7838428723006FAB00B88859 /* AchievementsListPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838428623006FAB00B88859 /* AchievementsListPresenterInput.swift */; };
+		7838428923006FB300B88859 /* AchievementsListPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838428823006FB300B88859 /* AchievementsListPresenterOutput.swift */; };
+		7838428B23006FC800B88859 /* AchievementsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7838428A23006FC800B88859 /* AchievementsListViewController.storyboard */; };
+		7838428D2300700C00B88859 /* AchievementsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838428C2300700C00B88859 /* AchievementsListViewController.swift */; };
+		7838428F2300707200B88859 /* AchievementsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838428E2300707200B88859 /* AchievementsListCell.swift */; };
+		783842922300724D00B88859 /* AchievementsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783842912300724D00B88859 /* AchievementsListPresenterTests.swift */; };
+		7838429423007A7900B88859 /* AchievementsListModuleFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838429323007A7900B88859 /* AchievementsListModuleFactoryTests.swift */; };
+		783842962300807B00B88859 /* CategoriesGroupsListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783842952300807B00B88859 /* CategoriesGroupsListRouterProtocol.swift */; };
+		783842982300808100B88859 /* CategoriesGroupsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783842972300808100B88859 /* CategoriesGroupsListRouter.swift */; };
 		785C9F4A22FDFB8500849DE2 /* GW2AchievementsBusinessLogic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785C9F4922FDFB8500849DE2 /* GW2AchievementsBusinessLogic.framework */; };
 		785C9F5222FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785C9F5122FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift */; };
 		786ED93B22FDF323004311B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ED93A22FDF323004311B1 /* AppDelegate.swift */; };
@@ -96,6 +107,17 @@
 		7838427223005E7900B88859 /* GetAchievementsListAPIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAchievementsListAPIWrapper.swift; sourceTree = "<group>"; };
 		7838427423005EC700B88859 /* AchievementItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementItem.swift; sourceTree = "<group>"; };
 		7838427623005FCA00B88859 /* AchievementsListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListRepository.swift; sourceTree = "<group>"; };
+		7838428223006F8A00B88859 /* AchievementsListModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListModuleFactory.swift; sourceTree = "<group>"; };
+		7838428423006FA300B88859 /* AchievementsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenter.swift; sourceTree = "<group>"; };
+		7838428623006FAB00B88859 /* AchievementsListPresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenterInput.swift; sourceTree = "<group>"; };
+		7838428823006FB300B88859 /* AchievementsListPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenterOutput.swift; sourceTree = "<group>"; };
+		7838428A23006FC800B88859 /* AchievementsListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AchievementsListViewController.storyboard; sourceTree = "<group>"; };
+		7838428C2300700C00B88859 /* AchievementsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewController.swift; sourceTree = "<group>"; };
+		7838428E2300707200B88859 /* AchievementsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListCell.swift; sourceTree = "<group>"; };
+		783842912300724D00B88859 /* AchievementsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenterTests.swift; sourceTree = "<group>"; };
+		7838429323007A7900B88859 /* AchievementsListModuleFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListModuleFactoryTests.swift; sourceTree = "<group>"; };
+		783842952300807B00B88859 /* CategoriesGroupsListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListRouterProtocol.swift; sourceTree = "<group>"; };
+		783842972300808100B88859 /* CategoriesGroupsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListRouter.swift; sourceTree = "<group>"; };
 		785C9EC222FDF81100849DE2 /* libGW2AchievementBusinessLogic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGW2AchievementBusinessLogic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		785C9F4922FDFB8500849DE2 /* GW2AchievementsBusinessLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GW2AchievementsBusinessLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		785C9F5122FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListPresenter.swift; sourceTree = "<group>"; };
@@ -185,6 +207,8 @@
 		7838422422FEFF8000B88859 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				783842952300807B00B88859 /* CategoriesGroupsListRouterProtocol.swift */,
+				783842972300808100B88859 /* CategoriesGroupsListRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -283,6 +307,61 @@
 			path = GetAchievementsList;
 			sourceTree = "<group>";
 		};
+		7838427D23006EC000B88859 /* AchievementsList */ = {
+			isa = PBXGroup;
+			children = (
+				7838428123006F0C00B88859 /* AchievementListCell */,
+				7838428023006F0200B88859 /* view */,
+				7838427F23006EDB00B88859 /* presenter */,
+				7838427E23006ECC00B88859 /* router */,
+				7838428223006F8A00B88859 /* AchievementsListModuleFactory.swift */,
+			);
+			path = AchievementsList;
+			sourceTree = "<group>";
+		};
+		7838427E23006ECC00B88859 /* router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		7838427F23006EDB00B88859 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7838428423006FA300B88859 /* AchievementsListPresenter.swift */,
+				7838428623006FAB00B88859 /* AchievementsListPresenterInput.swift */,
+				7838428823006FB300B88859 /* AchievementsListPresenterOutput.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		7838428023006F0200B88859 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7838428A23006FC800B88859 /* AchievementsListViewController.storyboard */,
+				7838428C2300700C00B88859 /* AchievementsListViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		7838428123006F0C00B88859 /* AchievementListCell */ = {
+			isa = PBXGroup;
+			children = (
+				7838428E2300707200B88859 /* AchievementsListCell.swift */,
+			);
+			path = AchievementListCell;
+			sourceTree = "<group>";
+		};
+		783842902300722D00B88859 /* AchievementsList */ = {
+			isa = PBXGroup;
+			children = (
+				783842912300724D00B88859 /* AchievementsListPresenterTests.swift */,
+				7838429323007A7900B88859 /* AchievementsListModuleFactoryTests.swift */,
+			);
+			path = AchievementsList;
+			sourceTree = "<group>";
+		};
 		785C9F5022FDFC1600849DE2 /* CategoriesGroupsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,16 +399,17 @@
 		786ED93922FDF323004311B1 /* GW2Achievements */ = {
 			isa = PBXGroup;
 			children = (
-				7838423B22FF09A300B88859 /* Common */,
+				7838427D23006EC000B88859 /* AchievementsList */,
 				7838422E22FF023500B88859 /* APIWrapper */,
-				7838422D22FF022D00B88859 /* Repositories */,
-				7838422822FF006C00B88859 /* Generated */,
-				785C9F5022FDFC1600849DE2 /* CategoriesGroupsList */,
 				786ED93A22FDF323004311B1 /* AppDelegate.swift */,
 				786ED94122FDF326004311B1 /* Assets.xcassets */,
-				786ED94322FDF326004311B1 /* LaunchScreen.storyboard */,
+				785C9F5022FDFC1600849DE2 /* CategoriesGroupsList */,
+				7838423B22FF09A300B88859 /* Common */,
+				7838422822FF006C00B88859 /* Generated */,
 				786ED94622FDF326004311B1 /* Info.plist */,
+				786ED94322FDF326004311B1 /* LaunchScreen.storyboard */,
 				7838424C2300335E00B88859 /* Localizable.strings */,
+				7838422D22FF022D00B88859 /* Repositories */,
 			);
 			path = GW2Achievements;
 			sourceTree = "<group>";
@@ -337,6 +417,7 @@
 		786ED94E22FDF326004311B1 /* GW2AchievementsTests */ = {
 			isa = PBXGroup;
 			children = (
+				783842902300722D00B88859 /* AchievementsList */,
 				78384248230021C100B88859 /* CategoriesGroupsList */,
 				7836C00122FEC66F00FF984F /* Generated */,
 				786ED95122FDF326004311B1 /* Info.plist */,
@@ -479,6 +560,7 @@
 				7838424D2300335E00B88859 /* Localizable.strings in Resources */,
 				7838422122FEFC6D00B88859 /* CategoriesGroupsListViewController.storyboard in Resources */,
 				786ED94222FDF326004311B1 /* Assets.xcassets in Resources */,
+				7838428B23006FC800B88859 /* AchievementsListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +685,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7838428323006F8A00B88859 /* AchievementsListModuleFactory.swift in Sources */,
+				7838428D2300700C00B88859 /* AchievementsListViewController.swift in Sources */,
 				783842552300461700B88859 /* AchievementCategoryItem.swift in Sources */,
 				7838427523005EC700B88859 /* AchievementItem.swift in Sources */,
 				7838422322FEFEE200B88859 /* CategoriesGroupsListViewController.swift in Sources */,
@@ -611,6 +695,7 @@
 				7838424723001B8200B88859 /* CategoriesGroupsListRepository.swift in Sources */,
 				783842582300469D00B88859 /* GetAchievementCategoriesListProtocol.swift in Sources */,
 				7838424F2300352C00B88859 /* Strings.swift in Sources */,
+				7838428923006FB300B88859 /* AchievementsListPresenterOutput.swift in Sources */,
 				7838422C22FF008100B88859 /* Storyboard Segues.swift in Sources */,
 				785C9F5222FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift in Sources */,
 				7838425323003EDF00B88859 /* CategoriesGroupsListCell.swift in Sources */,
@@ -619,11 +704,16 @@
 				7838423022FF025100B88859 /* APIWrapperProtocol.swift in Sources */,
 				7838427723005FCA00B88859 /* AchievementsListRepository.swift in Sources */,
 				786ED93B22FDF323004311B1 /* AppDelegate.swift in Sources */,
+				7838428723006FAB00B88859 /* AchievementsListPresenterInput.swift in Sources */,
 				7838422622FEFFA400B88859 /* CategoriesGroupsListModuleFactory.swift in Sources */,
+				783842962300807B00B88859 /* CategoriesGroupsListRouterProtocol.swift in Sources */,
+				7838428523006FA300B88859 /* AchievementsListPresenter.swift in Sources */,
 				7838423D22FF09AD00B88859 /* LocaleProtocol.swift in Sources */,
+				7838428F2300707200B88859 /* AchievementsListCell.swift in Sources */,
 				7838421E22FEFAC000B88859 /* CategoriesGroupsListPresenterOutput.swift in Sources */,
 				7838423A22FF07F600B88859 /* GetCategoriesGroupsListAPIWrapper.swift in Sources */,
 				7838423522FF05D400B88859 /* APIWrapper.swift in Sources */,
+				783842982300808100B88859 /* CategoriesGroupsListRouter.swift in Sources */,
 				7838425A230046C200B88859 /* GetAchievementsCategoriesListAPIWrapper.swift in Sources */,
 				7838423822FF065500B88859 /* GetCategoriesGroupsListAPIWrapperProtocol.swift in Sources */,
 				7838423322FF054300B88859 /* AchievementCategorisGroupItem.swift in Sources */,
@@ -634,7 +724,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783842922300724D00B88859 /* AchievementsListPresenterTests.swift in Sources */,
 				7836BFFD22FEC64000FF984F /* AutoMockable.generated.swift in Sources */,
+				7838429423007A7900B88859 /* AchievementsListModuleFactoryTests.swift in Sources */,
 				7836BFFF22FEC64D00FF984F /* AutoMockableBusinessLogic.generated.swift in Sources */,
 				7838425C230056D100B88859 /* CategoriesGroupsListModuleFactoryTests.swift in Sources */,
 				7838424A230021DE00B88859 /* CategoriesGroupsListPresenterTests.swift in Sources */,

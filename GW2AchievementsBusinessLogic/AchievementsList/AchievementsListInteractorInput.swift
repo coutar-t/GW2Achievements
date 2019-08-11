@@ -11,7 +11,7 @@ import Foundation
 // sourcery: AutoMockableBusinessLogic
 public protocol AchievementItemProtocol {
     var name: String { get }
-    var iconUrl: String { get }
+    var iconUrl: String? { get }
 }
 
 // sourcery: AutoMockableBusinessLogic

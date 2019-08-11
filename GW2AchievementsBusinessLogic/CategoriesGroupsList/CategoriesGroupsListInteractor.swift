@@ -12,9 +12,12 @@ class CategoriesGroupsListInteractor {
     weak var output: CategoriesGroupsListInteractorOutput?
     private let repository: CategoriesGroupsListRepositoryInput
     private var categoriesGroups: [CategoryGroupItem] = []
+    private let currentAchievementRepository: CurrentCategoryRepositoryInput
 
-    init(repository: CategoriesGroupsListRepositoryInput) {
+    init(repository: CategoriesGroupsListRepositoryInput,
+         currentAchievementRepository: CurrentCategoryRepositoryInput) {
         self.repository = repository
+        self.currentAchievementRepository = currentAchievementRepository
     }
 }
 
@@ -44,11 +47,19 @@ extension CategoriesGroupsListInteractor: CategoriesGroupsListInteractorInput {
             index < categoriesGroups[category].categories.count else { return nil }
         return categoriesGroups[category].categories[index]
     }
+
+    func selectCategory(at index: Int, for category: Int) {
+        guard category < categoriesGroups.count,
+            index < categoriesGroups[category].categories.count else { return }
+        let category = categoriesGroups[category].categories[index]
+        currentAchievementRepository.save(currentCategory: CurrentCategoryRepositoryRequest(name: category.name, iconUrl: category.iconUrl, achievements: category.achievements))
+        output?.routeToAchievementsList()
+    }
 }
 
 extension CategoriesGroupsListInteractor: CategoriesGroupsListRepositoryOutput {
     func didGet(categoriesGroups: [CategoriesGroupResponseProtocol]) {
-        self.categoriesGroups = categoriesGroups.map({ CategoryGroupItem(name: $0.name, categories: $0.categories.map({ CategoryItem(name: $0.name, iconUrl: $0.icon) })) })
+        self.categoriesGroups = categoriesGroups.map({ CategoryGroupItem(name: $0.name, categories: $0.categories.map({ CategoryItem(name: $0.name, iconUrl: $0.icon, achievements: $0.achievementsIds) })) })
         guard !categoriesGroups.isEmpty else {
             output?.notifyNoDataError()
             return
@@ -76,4 +87,11 @@ private struct CategoryGroupItem: CategoryGroupItemProtocol {
 private struct CategoryItem: CategoryItemProtocol {
     var name: String
     var iconUrl: String
+    var achievements: [Int]
+}
+
+private struct CurrentCategoryRepositoryRequest: CurrentCategoryRepositoryRequestProtocol {
+    var name: String
+    var iconUrl: String
+    var achievements: [Int]
 }

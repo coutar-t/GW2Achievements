@@ -31,5 +31,5 @@ public protocol AchievementResponseProtocol {
     var name: String { get }
     var description: String { get }
     var requirement: String { get }
-    var iconUrl: String { get }
+    var iconUrl: String? { get }
 }

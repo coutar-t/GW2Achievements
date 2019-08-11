@@ -18,8 +18,14 @@ class CategoriesGroupsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-//        categoriesGroupsTableView.delegate = self
+        categoriesGroupsTableView.delegate = self
         categoriesGroupsTableView.dataSource = self
+    }
+}
+
+extension CategoriesGroupsListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectRow(for: indexPath.row, at: indexPath.section)
     }
 }
 
@@ -70,7 +76,7 @@ extension CategoriesGroupsListViewController: CategoriesGroupsListPresenterOutpu
 
     func showError(with message: String, retryMessage: String) {
         let alertView = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let retryButton = UIAlertAction(title: retryMessage, style: .default) { [weak self] (_) in
+        let retryButton = UIAlertAction(title: retryMessage, style: .default) { (_) in
             // Retry
         }
         alertView.addAction(retryButton)

@@ -26,4 +26,5 @@ protocol CategoriesGroupsListPresenterInput {
     func numberOfRows(in section: Int) -> Int
     func sectionViewModel(at section: Int) -> CategoriesGroupViewModelProtocol
     func viewModel(for row: Int, at section: Int) -> CategoryViewModelProtocol
+    func selectRow(for row: Int, at section: Int)
 }

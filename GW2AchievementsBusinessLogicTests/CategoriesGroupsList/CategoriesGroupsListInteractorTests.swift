@@ -14,13 +14,16 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
     var interactor: CategoriesGroupsListInteractor!
     var output: CategoriesGroupsListInteractorOutputMock!
     var repository: CategoriesGroupsListRepositoryInputMock!
+    var currentRepository: CurrentCategoryRepositoryInputMock!
 
     override func setUp() {
         super.setUp()
 
         output = CategoriesGroupsListInteractorOutputMock()
         repository = CategoriesGroupsListRepositoryInputMock()
-        interactor = CategoriesGroupsListInteractor(repository: repository)
+        currentRepository = CurrentCategoryRepositoryInputMock()
+        interactor = CategoriesGroupsListInteractor(repository: repository,
+                                                    currentAchievementRepository: currentRepository)
         interactor.output = output
     }
 
@@ -42,6 +45,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     // MARK: - NumberOfCategories
@@ -63,6 +70,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenRetrievedCategory_whenNumberOfCategories_thenReturnOne() {
@@ -87,6 +98,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCallsCount).to(equal(1))
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenRetrievedCategoryAndGoodCategoryIndex_whenNumberOfCategoriesGroups_thenReturnNumberOfCategoriesGroups() {
@@ -112,6 +127,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCallsCount).to(equal(1))
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenRetrievedCategoryAndWrongCategoryIndex_whenNumberOfCategoriesGroups_thenReturnZero() {
@@ -137,6 +156,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCallsCount).to(equal(1))
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenNoRetrievedCategoryAndGoodCategoryIndex_whenNumberOfCategoriesGroups_thenReturnZero() {
@@ -156,6 +179,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     // MARK: - CategoryGroup
@@ -181,6 +208,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenCategoryGroupIndex_whenCategoryGroup_thenReturnCategoryGroup() {
@@ -204,6 +235,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     // MARK: - Category
@@ -229,6 +264,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenWrongIndex_whenCategory_thenReturnNil() {
@@ -252,6 +291,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenCategoryIndex_whenCategory_thenReturnCategoryItem() {
@@ -276,7 +319,95 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
+
+    // MARK: - SelectAchievement
+
+    func test_givenWrongCategoryIndex_whenSelectAchievement_thenDoNothing() {
+        // Given
+
+        let categoriesGroups = [CategoriesGroupResponseProtocolMock(name: "Toto", categories: []),
+                                CategoriesGroupResponseProtocolMock(name: "Tata", categories: [AchievementsCategoryResponseProtocolMock(name: "One", icon: "ICON", achievementsIds: []), AchievementsCategoryResponseProtocolMock(name: "two", icon: "ICON", achievementsIds: [])])]
+        interactor.didGet(categoriesGroups: categoriesGroups)
+
+        // When
+
+        interactor.selectCategory(at: 0, for: 12)
+
+        expect(self.repository.getCalled).to(beFalse())
+        expect(self.output.setDefaultValuesCalled).to(beFalse())
+        expect(self.output.updateCategoriesGroupsListCallsCount).to(equal(1))
+        expect(self.output.notifyLoadingCalled).to(beFalse())
+        expect(self.output.notifyServerErrorCalled).to(beFalse())
+        expect(self.output.notifyNetworkErrorCalled).to(beFalse())
+        expect(self.output.notifyUnknownErrorCalled).to(beFalse())
+        expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
+    }
+
+    func test_givenWrongIndex_whenSelectAchievment_thenDoNothing() {
+        // Given
+
+        let categoriesGroups = [CategoriesGroupResponseProtocolMock(name: "Toto", categories: []),
+                                CategoriesGroupResponseProtocolMock(name: "Tata", categories: [AchievementsCategoryResponseProtocolMock(name: "One", icon: "ICON", achievementsIds: []), AchievementsCategoryResponseProtocolMock(name: "two", icon: "ICON", achievementsIds: [])])]
+        interactor.didGet(categoriesGroups: categoriesGroups)
+
+        // When
+
+        interactor.selectCategory(at: 12, for: 0)
+
+        expect(self.repository.getCalled).to(beFalse())
+        expect(self.output.setDefaultValuesCalled).to(beFalse())
+        expect(self.output.updateCategoriesGroupsListCallsCount).to(equal(1))
+        expect(self.output.notifyLoadingCalled).to(beFalse())
+        expect(self.output.notifyServerErrorCalled).to(beFalse())
+        expect(self.output.notifyNetworkErrorCalled).to(beFalse())
+        expect(self.output.notifyUnknownErrorCalled).to(beFalse())
+        expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
+    }
+
+    func test_givenCategoryIndex_whenSelectAchievement_thenOutputRouteToAchievmentsListAndCurrentRepositorySave() {
+        // Given
+
+        let categoriesGroups = [CategoriesGroupResponseProtocolMock(name: "Toto", categories: []),
+                                CategoriesGroupResponseProtocolMock(name: "Tata", categories: [AchievementsCategoryResponseProtocolMock(name: "One", icon: "ICON", achievementsIds: []), AchievementsCategoryResponseProtocolMock(name: "two", icon: "ICON2", achievementsIds: [1, 2])])]
+        interactor.didGet(categoriesGroups: categoriesGroups)
+
+        // When
+
+        interactor.selectCategory(at: 1, for: 1)
+
+        expect(self.currentRepository.saveCurrentCategoryReceivedCurrentCategory?.name).to(equal("two"))
+        expect(self.currentRepository.saveCurrentCategoryReceivedCurrentCategory?.iconUrl).to(equal("ICON2"))
+        expect(self.currentRepository.saveCurrentCategoryReceivedCurrentCategory?.achievements).to(equal([1, 2]))
+        expect(self.currentRepository.saveCurrentCategoryCallsCount).to(equal(1))
+        expect(self.output.routeToAchievementsListCallsCount).to(equal(1))
+
+
+        expect(self.repository.getCalled).to(beFalse())
+        expect(self.output.setDefaultValuesCalled).to(beFalse())
+        expect(self.output.updateCategoriesGroupsListCallsCount).to(equal(1))
+        expect(self.output.notifyLoadingCalled).to(beFalse())
+        expect(self.output.notifyServerErrorCalled).to(beFalse())
+        expect(self.output.notifyNetworkErrorCalled).to(beFalse())
+        expect(self.output.notifyUnknownErrorCalled).to(beFalse())
+        expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+    }
+
+
 
     // MARK: - DidGet
 
@@ -301,6 +432,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenNoCategoriesGroups_whenDidGet_thenUpdateCategories() {
@@ -323,6 +458,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     // MARK: - DidHanleError
@@ -343,6 +482,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenNetwork_whenDidHandleError_thenOutputNetworkError() {
@@ -361,6 +504,10 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyUnknownErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 
     func test_givenServer_whenDidHandleError_thenOutputServerError() {
@@ -379,5 +526,9 @@ class CategoriesGroupsListInteractorTests: XCTestCase {
         expect(self.output.notifyNetworkErrorCalled).to(beFalse())
         expect(self.output.updateCategoriesGroupsListCalled).to(beFalse())
         expect(self.output.notifyNoDataErrorCalled).to(beFalse())
+        expect(self.output.routeToAchievementsListCalled).to(beFalse())
+        expect(self.currentRepository.getCalled).to(beFalse())
+        expect(self.currentRepository.clearCalled).to(beFalse())
+        expect(self.currentRepository.saveCurrentCategoryCalled).to(beFalse())
     }
 }

@@ -14,3 +14,10 @@
 "categories.list.error.unknown.message" = "Oops something went wrong";
 "categories.list.error.unknown.retry" = "Retry";
 
+"achievements.list.title.default"="Achievements";
+"achievements.list.error.network.message" = "Oops it seems we can't access internet";
+"achievements.list.error.network.retry" = "Retry";
+"achievements.list.error.server.message" = "Oops something went wrong on the server";
+"achievements.list.error.server.retry" = "Retry";
+"achievements.list.error.unknown.message" = "Oops something went wrong";
+"achievements.list.error.unknown.retry" = "Retry";

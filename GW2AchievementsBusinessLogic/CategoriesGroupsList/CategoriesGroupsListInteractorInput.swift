@@ -28,4 +28,5 @@ public protocol CategoriesGroupsListInteractorInput: class {
     func numberOfCategoriesGroups(for category: Int) -> Int
     func categoryGroup(for category: Int) -> CategoryGroupItemProtocol?
     func category(at index: Int, for category: Int) -> CategoryItemProtocol?
+    func selectCategory(at index: Int, for category: Int)
 }
