@@ -1,0 +1,13 @@
+ib:
+  inputs: ./GW2Achievements
+  outputs:
+    - templateName: scenes-swift4
+      output: ./Generated/Storyboard Scenes.swift
+    - templateName: segues-swift4
+      output: ./Generated/Storyboard Segues.swift
+
+strings:
+    inputs: ./GW2Achievements
+    outputs:
+    - templateName: structured-swift4
+      output: ./Generated/Strings.swift

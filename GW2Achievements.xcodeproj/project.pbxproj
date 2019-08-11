@@ -1,0 +1,959 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7836BFFD22FEC64000FF984F /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836BFFC22FEC64000FF984F /* AutoMockable.generated.swift */; };
+		7836BFFF22FEC64D00FF984F /* AutoMockableBusinessLogic.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7836BFFE22FEC64D00FF984F /* AutoMockableBusinessLogic.generated.swift */; };
+		7838421C22FEFAB800B88859 /* CategoriesGroupsListPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838421B22FEFAB800B88859 /* CategoriesGroupsListPresenterInput.swift */; };
+		7838421E22FEFAC000B88859 /* CategoriesGroupsListPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838421D22FEFAC000B88859 /* CategoriesGroupsListPresenterOutput.swift */; };
+		7838422122FEFC6D00B88859 /* CategoriesGroupsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7838422022FEFC6D00B88859 /* CategoriesGroupsListViewController.storyboard */; };
+		7838422322FEFEE200B88859 /* CategoriesGroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838422222FEFEE200B88859 /* CategoriesGroupsListViewController.swift */; };
+		7838422622FEFFA400B88859 /* CategoriesGroupsListModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838422522FEFFA400B88859 /* CategoriesGroupsListModuleFactory.swift */; };
+		7838422B22FF008100B88859 /* Storyboard Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838422922FF008100B88859 /* Storyboard Scenes.swift */; };
+		7838422C22FF008100B88859 /* Storyboard Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838422A22FF008100B88859 /* Storyboard Segues.swift */; };
+		7838423022FF025100B88859 /* APIWrapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838422F22FF025100B88859 /* APIWrapperProtocol.swift */; };
+		7838423322FF054300B88859 /* AchievementCategorisGroupItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838423222FF054300B88859 /* AchievementCategorisGroupItem.swift */; };
+		7838423522FF05D400B88859 /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838423422FF05D400B88859 /* APIWrapper.swift */; };
+		7838423822FF065500B88859 /* GetCategoriesGroupsListAPIWrapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838423722FF065500B88859 /* GetCategoriesGroupsListAPIWrapperProtocol.swift */; };
+		7838423A22FF07F600B88859 /* GetCategoriesGroupsListAPIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838423922FF07F600B88859 /* GetCategoriesGroupsListAPIWrapper.swift */; };
+		7838423D22FF09AD00B88859 /* LocaleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838423C22FF09AD00B88859 /* LocaleProtocol.swift */; };
+		7838424723001B8200B88859 /* CategoriesGroupsListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838424623001B8200B88859 /* CategoriesGroupsListRepository.swift */; };
+		7838424A230021DE00B88859 /* CategoriesGroupsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78384249230021DE00B88859 /* CategoriesGroupsListPresenterTests.swift */; };
+		7838424D2300335E00B88859 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7838424C2300335E00B88859 /* Localizable.strings */; };
+		7838424F2300352C00B88859 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838424E2300352C00B88859 /* Strings.swift */; };
+		7838425323003EDF00B88859 /* CategoriesGroupsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838425223003EDF00B88859 /* CategoriesGroupsListCell.swift */; };
+		783842552300461700B88859 /* AchievementCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783842542300461700B88859 /* AchievementCategoryItem.swift */; };
+		783842582300469D00B88859 /* GetAchievementCategoriesListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783842572300469D00B88859 /* GetAchievementCategoriesListProtocol.swift */; };
+		7838425A230046C200B88859 /* GetAchievementsCategoriesListAPIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78384259230046C200B88859 /* GetAchievementsCategoriesListAPIWrapper.swift */; };
+		7838425C230056D100B88859 /* CategoriesGroupsListModuleFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838425B230056D100B88859 /* CategoriesGroupsListModuleFactoryTests.swift */; };
+		7838427123005E3400B88859 /* GetAchievementsListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838427023005E3400B88859 /* GetAchievementsListProtocol.swift */; };
+		7838427323005E7900B88859 /* GetAchievementsListAPIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838427223005E7900B88859 /* GetAchievementsListAPIWrapper.swift */; };
+		7838427523005EC700B88859 /* AchievementItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838427423005EC700B88859 /* AchievementItem.swift */; };
+		7838427723005FCA00B88859 /* AchievementsListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838427623005FCA00B88859 /* AchievementsListRepository.swift */; };
+		785C9F4A22FDFB8500849DE2 /* GW2AchievementsBusinessLogic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785C9F4922FDFB8500849DE2 /* GW2AchievementsBusinessLogic.framework */; };
+		785C9F5222FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785C9F5122FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift */; };
+		786ED93B22FDF323004311B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ED93A22FDF323004311B1 /* AppDelegate.swift */; };
+		786ED94222FDF326004311B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786ED94122FDF326004311B1 /* Assets.xcassets */; };
+		786ED94522FDF326004311B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786ED94322FDF326004311B1 /* LaunchScreen.storyboard */; };
+		786ED95B22FDF326004311B1 /* GW2_AchievementsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ED95A22FDF326004311B1 /* GW2_AchievementsUITests.swift */; };
+		7DDAFE9F6B63CBB32F701DBF /* Pods_GW2Achievements.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EF3190F9BE3BBD46358D2B /* Pods_GW2Achievements.framework */; };
+		C5A5CE708C20FCB0F2E4E250 /* libPods-Tests-GW2AchievementsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2D782151C65EB0DAD96D5C /* libPods-Tests-GW2AchievementsTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		786ED94C22FDF326004311B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 786ED92F22FDF323004311B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 786ED93622FDF323004311B1;
+			remoteInfo = GW2Achievements;
+		};
+		786ED95722FDF326004311B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 786ED92F22FDF323004311B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 786ED93622FDF323004311B1;
+			remoteInfo = GW2Achievements;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		020DD6A3B1CE6E1416CB21E4 /* Pods-GW2Achievements.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GW2Achievements.release.xcconfig"; path = "Target Support Files/Pods-GW2Achievements/Pods-GW2Achievements.release.xcconfig"; sourceTree = "<group>"; };
+		2D2D782151C65EB0DAD96D5C /* libPods-Tests-GW2AchievementsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-GW2AchievementsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58EF3190F9BE3BBD46358D2B /* Pods_GW2Achievements.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GW2Achievements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF016AFD01CF2E795B637B9 /* Pods-GW2AchievementsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GW2AchievementsTests.release.xcconfig"; path = "Target Support Files/Pods-GW2AchievementsTests/Pods-GW2AchievementsTests.release.xcconfig"; sourceTree = "<group>"; };
+		774A82CC910E848B08FBB82A /* Pods-Tests-GW2AchievementsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-GW2AchievementsTests.release.xcconfig"; path = "Target Support Files/Pods-Tests-GW2AchievementsTests/Pods-Tests-GW2AchievementsTests.release.xcconfig"; sourceTree = "<group>"; };
+		7836BFFC22FEC64000FF984F /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoMockable.generated.swift; path = Generated/AutoMockable.generated.swift; sourceTree = SOURCE_ROOT; };
+		7836BFFE22FEC64D00FF984F /* AutoMockableBusinessLogic.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoMockableBusinessLogic.generated.swift; path = Generated/AutoMockableBusinessLogic.generated.swift; sourceTree = SOURCE_ROOT; };
+		7838421B22FEFAB800B88859 /* CategoriesGroupsListPresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListPresenterInput.swift; sourceTree = "<group>"; };
+		7838421D22FEFAC000B88859 /* CategoriesGroupsListPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListPresenterOutput.swift; sourceTree = "<group>"; };
+		7838422022FEFC6D00B88859 /* CategoriesGroupsListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoriesGroupsListViewController.storyboard; sourceTree = "<group>"; };
+		7838422222FEFEE200B88859 /* CategoriesGroupsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListViewController.swift; sourceTree = "<group>"; };
+		7838422522FEFFA400B88859 /* CategoriesGroupsListModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListModuleFactory.swift; sourceTree = "<group>"; };
+		7838422922FF008100B88859 /* Storyboard Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard Scenes.swift"; path = "Generated/Storyboard Scenes.swift"; sourceTree = SOURCE_ROOT; };
+		7838422A22FF008100B88859 /* Storyboard Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard Segues.swift"; path = "Generated/Storyboard Segues.swift"; sourceTree = SOURCE_ROOT; };
+		7838422F22FF025100B88859 /* APIWrapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrapperProtocol.swift; sourceTree = "<group>"; };
+		7838423222FF054300B88859 /* AchievementCategorisGroupItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCategorisGroupItem.swift; sourceTree = "<group>"; };
+		7838423422FF05D400B88859 /* APIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
+		7838423722FF065500B88859 /* GetCategoriesGroupsListAPIWrapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesGroupsListAPIWrapperProtocol.swift; sourceTree = "<group>"; };
+		7838423922FF07F600B88859 /* GetCategoriesGroupsListAPIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesGroupsListAPIWrapper.swift; sourceTree = "<group>"; };
+		7838423C22FF09AD00B88859 /* LocaleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleProtocol.swift; sourceTree = "<group>"; };
+		7838424623001B8200B88859 /* CategoriesGroupsListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListRepository.swift; sourceTree = "<group>"; };
+		78384249230021DE00B88859 /* CategoriesGroupsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListPresenterTests.swift; sourceTree = "<group>"; };
+		7838424C2300335E00B88859 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7838424E2300352C00B88859 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Generated/Strings.swift; sourceTree = SOURCE_ROOT; };
+		7838425223003EDF00B88859 /* CategoriesGroupsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListCell.swift; sourceTree = "<group>"; };
+		783842542300461700B88859 /* AchievementCategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCategoryItem.swift; sourceTree = "<group>"; };
+		783842572300469D00B88859 /* GetAchievementCategoriesListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAchievementCategoriesListProtocol.swift; sourceTree = "<group>"; };
+		78384259230046C200B88859 /* GetAchievementsCategoriesListAPIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAchievementsCategoriesListAPIWrapper.swift; sourceTree = "<group>"; };
+		7838425B230056D100B88859 /* CategoriesGroupsListModuleFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListModuleFactoryTests.swift; sourceTree = "<group>"; };
+		7838427023005E3400B88859 /* GetAchievementsListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAchievementsListProtocol.swift; sourceTree = "<group>"; };
+		7838427223005E7900B88859 /* GetAchievementsListAPIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAchievementsListAPIWrapper.swift; sourceTree = "<group>"; };
+		7838427423005EC700B88859 /* AchievementItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementItem.swift; sourceTree = "<group>"; };
+		7838427623005FCA00B88859 /* AchievementsListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListRepository.swift; sourceTree = "<group>"; };
+		785C9EC222FDF81100849DE2 /* libGW2AchievementBusinessLogic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGW2AchievementBusinessLogic.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		785C9F4922FDFB8500849DE2 /* GW2AchievementsBusinessLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GW2AchievementsBusinessLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		785C9F5122FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGroupsListPresenter.swift; sourceTree = "<group>"; };
+		786ED93722FDF323004311B1 /* GW2Achievements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GW2Achievements.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		786ED93A22FDF323004311B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		786ED94122FDF326004311B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		786ED94422FDF326004311B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		786ED94622FDF326004311B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		786ED94B22FDF326004311B1 /* GW2AchievementsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GW2AchievementsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		786ED95122FDF326004311B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		786ED95622FDF326004311B1 /* GW2AchievementsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GW2AchievementsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		786ED95A22FDF326004311B1 /* GW2_AchievementsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GW2_AchievementsUITests.swift; sourceTree = "<group>"; };
+		786ED95C22FDF326004311B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB129BC2CCD356F1A5E77A88 /* Pods-GW2Achievements.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GW2Achievements.debug.xcconfig"; path = "Target Support Files/Pods-GW2Achievements/Pods-GW2Achievements.debug.xcconfig"; sourceTree = "<group>"; };
+		CF70122A8EA895E138A6A36A /* Pods-GW2AchievementsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GW2AchievementsTests.debug.xcconfig"; path = "Target Support Files/Pods-GW2AchievementsTests/Pods-GW2AchievementsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F33F18F42B2C6D0E5DD0F333 /* Pods-Tests-GW2AchievementsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-GW2AchievementsTests.debug.xcconfig"; path = "Target Support Files/Pods-Tests-GW2AchievementsTests/Pods-Tests-GW2AchievementsTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		786ED93422FDF323004311B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785C9F4A22FDFB8500849DE2 /* GW2AchievementsBusinessLogic.framework in Frameworks */,
+				7DDAFE9F6B63CBB32F701DBF /* Pods_GW2Achievements.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		786ED94822FDF326004311B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5A5CE708C20FCB0F2E4E250 /* libPods-Tests-GW2AchievementsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		786ED95322FDF326004311B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BFC4194621A79385D3860F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				785C9F4922FDFB8500849DE2 /* GW2AchievementsBusinessLogic.framework */,
+				785C9EC222FDF81100849DE2 /* libGW2AchievementBusinessLogic.a */,
+				58EF3190F9BE3BBD46358D2B /* Pods_GW2Achievements.framework */,
+				2D2D782151C65EB0DAD96D5C /* libPods-Tests-GW2AchievementsTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7836C00122FEC66F00FF984F /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				7836BFFC22FEC64000FF984F /* AutoMockable.generated.swift */,
+				7836BFFE22FEC64D00FF984F /* AutoMockableBusinessLogic.generated.swift */,
+			);
+			name = Generated;
+			path = ../Generated;
+			sourceTree = "<group>";
+		};
+		7838421A22FEFAA200B88859 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				785C9F5122FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift */,
+				7838421B22FEFAB800B88859 /* CategoriesGroupsListPresenterInput.swift */,
+				7838421D22FEFAC000B88859 /* CategoriesGroupsListPresenterOutput.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		7838421F22FEFC4600B88859 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7838422022FEFC6D00B88859 /* CategoriesGroupsListViewController.storyboard */,
+				7838422222FEFEE200B88859 /* CategoriesGroupsListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7838422422FEFF8000B88859 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7838422822FF006C00B88859 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				7838424E2300352C00B88859 /* Strings.swift */,
+				7838422922FF008100B88859 /* Storyboard Scenes.swift */,
+				7838422A22FF008100B88859 /* Storyboard Segues.swift */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
+		7838422D22FF022D00B88859 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				7838424623001B8200B88859 /* CategoriesGroupsListRepository.swift */,
+				7838427623005FCA00B88859 /* AchievementsListRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		7838422E22FF023500B88859 /* APIWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				7838426F23005E0C00B88859 /* GetAchievementsList */,
+				783842562300467B00B88859 /* GetAchievementCategoriesList */,
+				7838423622FF063200B88859 /* GetCategoriesGroupsList */,
+				7838423122FF04C900B88859 /* Items */,
+				7838422F22FF025100B88859 /* APIWrapperProtocol.swift */,
+				7838423422FF05D400B88859 /* APIWrapper.swift */,
+			);
+			path = APIWrapper;
+			sourceTree = "<group>";
+		};
+		7838423122FF04C900B88859 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				7838423222FF054300B88859 /* AchievementCategorisGroupItem.swift */,
+				783842542300461700B88859 /* AchievementCategoryItem.swift */,
+				7838427423005EC700B88859 /* AchievementItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		7838423622FF063200B88859 /* GetCategoriesGroupsList */ = {
+			isa = PBXGroup;
+			children = (
+				7838423722FF065500B88859 /* GetCategoriesGroupsListAPIWrapperProtocol.swift */,
+				7838423922FF07F600B88859 /* GetCategoriesGroupsListAPIWrapper.swift */,
+			);
+			path = GetCategoriesGroupsList;
+			sourceTree = "<group>";
+		};
+		7838423B22FF09A300B88859 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7838423C22FF09AD00B88859 /* LocaleProtocol.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		78384248230021C100B88859 /* CategoriesGroupsList */ = {
+			isa = PBXGroup;
+			children = (
+				78384249230021DE00B88859 /* CategoriesGroupsListPresenterTests.swift */,
+				7838425B230056D100B88859 /* CategoriesGroupsListModuleFactoryTests.swift */,
+			);
+			path = CategoriesGroupsList;
+			sourceTree = "<group>";
+		};
+		7838425123003EC600B88859 /* CategoriesGroupsListCell */ = {
+			isa = PBXGroup;
+			children = (
+				7838425223003EDF00B88859 /* CategoriesGroupsListCell.swift */,
+			);
+			path = CategoriesGroupsListCell;
+			sourceTree = "<group>";
+		};
+		783842562300467B00B88859 /* GetAchievementCategoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				783842572300469D00B88859 /* GetAchievementCategoriesListProtocol.swift */,
+				78384259230046C200B88859 /* GetAchievementsCategoriesListAPIWrapper.swift */,
+			);
+			path = GetAchievementCategoriesList;
+			sourceTree = "<group>";
+		};
+		7838426F23005E0C00B88859 /* GetAchievementsList */ = {
+			isa = PBXGroup;
+			children = (
+				7838427023005E3400B88859 /* GetAchievementsListProtocol.swift */,
+				7838427223005E7900B88859 /* GetAchievementsListAPIWrapper.swift */,
+			);
+			path = GetAchievementsList;
+			sourceTree = "<group>";
+		};
+		785C9F5022FDFC1600849DE2 /* CategoriesGroupsList */ = {
+			isa = PBXGroup;
+			children = (
+				7838425123003EC600B88859 /* CategoriesGroupsListCell */,
+				7838422422FEFF8000B88859 /* Router */,
+				7838421F22FEFC4600B88859 /* View */,
+				7838421A22FEFAA200B88859 /* presenter */,
+				7838422522FEFFA400B88859 /* CategoriesGroupsListModuleFactory.swift */,
+			);
+			path = CategoriesGroupsList;
+			sourceTree = "<group>";
+		};
+		786ED92E22FDF323004311B1 = {
+			isa = PBXGroup;
+			children = (
+				786ED93922FDF323004311B1 /* GW2Achievements */,
+				786ED94E22FDF326004311B1 /* GW2AchievementsTests */,
+				786ED95922FDF326004311B1 /* GW2AchievementsUITests */,
+				786ED93822FDF323004311B1 /* Products */,
+				91669C25B83EC9265CA69F9B /* Pods */,
+				2BFC4194621A79385D3860F4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		786ED93822FDF323004311B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				786ED93722FDF323004311B1 /* GW2Achievements.app */,
+				786ED94B22FDF326004311B1 /* GW2AchievementsTests.xctest */,
+				786ED95622FDF326004311B1 /* GW2AchievementsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		786ED93922FDF323004311B1 /* GW2Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				7838423B22FF09A300B88859 /* Common */,
+				7838422E22FF023500B88859 /* APIWrapper */,
+				7838422D22FF022D00B88859 /* Repositories */,
+				7838422822FF006C00B88859 /* Generated */,
+				785C9F5022FDFC1600849DE2 /* CategoriesGroupsList */,
+				786ED93A22FDF323004311B1 /* AppDelegate.swift */,
+				786ED94122FDF326004311B1 /* Assets.xcassets */,
+				786ED94322FDF326004311B1 /* LaunchScreen.storyboard */,
+				786ED94622FDF326004311B1 /* Info.plist */,
+				7838424C2300335E00B88859 /* Localizable.strings */,
+			);
+			path = GW2Achievements;
+			sourceTree = "<group>";
+		};
+		786ED94E22FDF326004311B1 /* GW2AchievementsTests */ = {
+			isa = PBXGroup;
+			children = (
+				78384248230021C100B88859 /* CategoriesGroupsList */,
+				7836C00122FEC66F00FF984F /* Generated */,
+				786ED95122FDF326004311B1 /* Info.plist */,
+			);
+			path = GW2AchievementsTests;
+			sourceTree = "<group>";
+		};
+		786ED95922FDF326004311B1 /* GW2AchievementsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				786ED95A22FDF326004311B1 /* GW2_AchievementsUITests.swift */,
+				786ED95C22FDF326004311B1 /* Info.plist */,
+			);
+			path = GW2AchievementsUITests;
+			sourceTree = "<group>";
+		};
+		91669C25B83EC9265CA69F9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB129BC2CCD356F1A5E77A88 /* Pods-GW2Achievements.debug.xcconfig */,
+				020DD6A3B1CE6E1416CB21E4 /* Pods-GW2Achievements.release.xcconfig */,
+				CF70122A8EA895E138A6A36A /* Pods-GW2AchievementsTests.debug.xcconfig */,
+				5CF016AFD01CF2E795B637B9 /* Pods-GW2AchievementsTests.release.xcconfig */,
+				F33F18F42B2C6D0E5DD0F333 /* Pods-Tests-GW2AchievementsTests.debug.xcconfig */,
+				774A82CC910E848B08FBB82A /* Pods-Tests-GW2AchievementsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		786ED93622FDF323004311B1 /* GW2Achievements */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 786ED95F22FDF326004311B1 /* Build configuration list for PBXNativeTarget "GW2Achievements" */;
+			buildPhases = (
+				14FDE76CBB8273ADEFF23A88 /* [CP] Check Pods Manifest.lock */,
+				7838422722FEFFED00B88859 /* SwiftGen */,
+				786ED93322FDF323004311B1 /* Sources */,
+				786ED93422FDF323004311B1 /* Frameworks */,
+				786ED93522FDF323004311B1 /* Resources */,
+				315FAFDC4B772CD3F975D595 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GW2Achievements;
+			productName = GW2Achievements;
+			productReference = 786ED93722FDF323004311B1 /* GW2Achievements.app */;
+			productType = "com.apple.product-type.application";
+		};
+		786ED94A22FDF326004311B1 /* GW2AchievementsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 786ED96222FDF326004311B1 /* Build configuration list for PBXNativeTarget "GW2AchievementsTests" */;
+			buildPhases = (
+				F216231B538C39206D0E0143 /* [CP] Check Pods Manifest.lock */,
+				7838424B2300223D00B88859 /* Sourcery */,
+				786ED94722FDF326004311B1 /* Sources */,
+				786ED94822FDF326004311B1 /* Frameworks */,
+				786ED94922FDF326004311B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				786ED94D22FDF326004311B1 /* PBXTargetDependency */,
+			);
+			name = GW2AchievementsTests;
+			productName = GW2AchievementsTests;
+			productReference = 786ED94B22FDF326004311B1 /* GW2AchievementsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		786ED95522FDF326004311B1 /* GW2AchievementsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 786ED96522FDF326004311B1 /* Build configuration list for PBXNativeTarget "GW2AchievementsUITests" */;
+			buildPhases = (
+				786ED95222FDF326004311B1 /* Sources */,
+				786ED95322FDF326004311B1 /* Frameworks */,
+				786ED95422FDF326004311B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				786ED95822FDF326004311B1 /* PBXTargetDependency */,
+			);
+			name = GW2AchievementsUITests;
+			productName = GW2AchievementsUITests;
+			productReference = 786ED95622FDF326004311B1 /* GW2AchievementsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		786ED92F22FDF323004311B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Thibaut Coutard";
+				TargetAttributes = {
+					786ED93622FDF323004311B1 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					786ED94A22FDF326004311B1 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 786ED93622FDF323004311B1;
+					};
+					786ED95522FDF326004311B1 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 786ED93622FDF323004311B1;
+					};
+				};
+			};
+			buildConfigurationList = 786ED93222FDF323004311B1 /* Build configuration list for PBXProject "GW2Achievements" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 786ED92E22FDF323004311B1;
+			productRefGroup = 786ED93822FDF323004311B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				786ED93622FDF323004311B1 /* GW2Achievements */,
+				786ED94A22FDF326004311B1 /* GW2AchievementsTests */,
+				786ED95522FDF326004311B1 /* GW2AchievementsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		786ED93522FDF323004311B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				786ED94522FDF326004311B1 /* LaunchScreen.storyboard in Resources */,
+				7838424D2300335E00B88859 /* Localizable.strings in Resources */,
+				7838422122FEFC6D00B88859 /* CategoriesGroupsListViewController.storyboard in Resources */,
+				786ED94222FDF326004311B1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		786ED94922FDF326004311B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		786ED95422FDF326004311B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14FDE76CBB8273ADEFF23A88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GW2Achievements-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		315FAFDC4B772CD3F975D595 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GW2Achievements/Pods-GW2Achievements-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GW2Achievements/Pods-GW2Achievements-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GW2Achievements/Pods-GW2Achievements-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7838422722FEFFED00B88859 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
+		7838424B2300223D00B88859 /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/Sourcery/bin/sourcery\n";
+		};
+		F216231B538C39206D0E0143 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tests-GW2AchievementsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		786ED93322FDF323004311B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783842552300461700B88859 /* AchievementCategoryItem.swift in Sources */,
+				7838427523005EC700B88859 /* AchievementItem.swift in Sources */,
+				7838422322FEFEE200B88859 /* CategoriesGroupsListViewController.swift in Sources */,
+				7838427123005E3400B88859 /* GetAchievementsListProtocol.swift in Sources */,
+				7838427323005E7900B88859 /* GetAchievementsListAPIWrapper.swift in Sources */,
+				7838424723001B8200B88859 /* CategoriesGroupsListRepository.swift in Sources */,
+				783842582300469D00B88859 /* GetAchievementCategoriesListProtocol.swift in Sources */,
+				7838424F2300352C00B88859 /* Strings.swift in Sources */,
+				7838422C22FF008100B88859 /* Storyboard Segues.swift in Sources */,
+				785C9F5222FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift in Sources */,
+				7838425323003EDF00B88859 /* CategoriesGroupsListCell.swift in Sources */,
+				7838421C22FEFAB800B88859 /* CategoriesGroupsListPresenterInput.swift in Sources */,
+				7838422B22FF008100B88859 /* Storyboard Scenes.swift in Sources */,
+				7838423022FF025100B88859 /* APIWrapperProtocol.swift in Sources */,
+				7838427723005FCA00B88859 /* AchievementsListRepository.swift in Sources */,
+				786ED93B22FDF323004311B1 /* AppDelegate.swift in Sources */,
+				7838422622FEFFA400B88859 /* CategoriesGroupsListModuleFactory.swift in Sources */,
+				7838423D22FF09AD00B88859 /* LocaleProtocol.swift in Sources */,
+				7838421E22FEFAC000B88859 /* CategoriesGroupsListPresenterOutput.swift in Sources */,
+				7838423A22FF07F600B88859 /* GetCategoriesGroupsListAPIWrapper.swift in Sources */,
+				7838423522FF05D400B88859 /* APIWrapper.swift in Sources */,
+				7838425A230046C200B88859 /* GetAchievementsCategoriesListAPIWrapper.swift in Sources */,
+				7838423822FF065500B88859 /* GetCategoriesGroupsListAPIWrapperProtocol.swift in Sources */,
+				7838423322FF054300B88859 /* AchievementCategorisGroupItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		786ED94722FDF326004311B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7836BFFD22FEC64000FF984F /* AutoMockable.generated.swift in Sources */,
+				7836BFFF22FEC64D00FF984F /* AutoMockableBusinessLogic.generated.swift in Sources */,
+				7838425C230056D100B88859 /* CategoriesGroupsListModuleFactoryTests.swift in Sources */,
+				7838424A230021DE00B88859 /* CategoriesGroupsListPresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		786ED95222FDF326004311B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				786ED95B22FDF326004311B1 /* GW2_AchievementsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		786ED94D22FDF326004311B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 786ED93622FDF323004311B1 /* GW2Achievements */;
+			targetProxy = 786ED94C22FDF326004311B1 /* PBXContainerItemProxy */;
+		};
+		786ED95822FDF326004311B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 786ED93622FDF323004311B1 /* GW2Achievements */;
+			targetProxy = 786ED95722FDF326004311B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		786ED94322FDF326004311B1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				786ED94422FDF326004311B1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		786ED95D22FDF326004311B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		786ED95E22FDF326004311B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		786ED96022FDF326004311B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB129BC2CCD356F1A5E77A88 /* Pods-GW2Achievements.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4965NT4QX9;
+				INFOPLIST_FILE = "$(SRCROOT)/GW2Achievements/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibautc.GW2-Achievements";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		786ED96122FDF326004311B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 020DD6A3B1CE6E1416CB21E4 /* Pods-GW2Achievements.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4965NT4QX9;
+				INFOPLIST_FILE = "$(SRCROOT)/GW2Achievements/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibautc.GW2-Achievements";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		786ED96322FDF326004311B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F33F18F42B2C6D0E5DD0F333 /* Pods-Tests-GW2AchievementsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4965NT4QX9;
+				INFOPLIST_FILE = GW2AchievementsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibautc.GW2-AchievementsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GW2Achievements.app/GW2Achievements";
+			};
+			name = Debug;
+		};
+		786ED96422FDF326004311B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 774A82CC910E848B08FBB82A /* Pods-Tests-GW2AchievementsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4965NT4QX9;
+				INFOPLIST_FILE = GW2AchievementsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibautc.GW2-AchievementsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GW2Achievements.app/GW2Achievements";
+			};
+			name = Release;
+		};
+		786ED96622FDF326004311B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4965NT4QX9;
+				INFOPLIST_FILE = GW2AchievementsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibautc.GW2-AchievementsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GW2Achievements;
+			};
+			name = Debug;
+		};
+		786ED96722FDF326004311B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4965NT4QX9;
+				INFOPLIST_FILE = GW2AchievementsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thibautc.GW2-AchievementsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GW2Achievements;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		786ED93222FDF323004311B1 /* Build configuration list for PBXProject "GW2Achievements" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				786ED95D22FDF326004311B1 /* Debug */,
+				786ED95E22FDF326004311B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		786ED95F22FDF326004311B1 /* Build configuration list for PBXNativeTarget "GW2Achievements" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				786ED96022FDF326004311B1 /* Debug */,
+				786ED96122FDF326004311B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		786ED96222FDF326004311B1 /* Build configuration list for PBXNativeTarget "GW2AchievementsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				786ED96322FDF326004311B1 /* Debug */,
+				786ED96422FDF326004311B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		786ED96522FDF326004311B1 /* Build configuration list for PBXNativeTarget "GW2AchievementsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				786ED96622FDF326004311B1 /* Debug */,
+				786ED96722FDF326004311B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 786ED92F22FDF323004311B1 /* Project object */;
+}

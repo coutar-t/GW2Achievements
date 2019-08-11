@@ -1,0 +1,7 @@
+sources:
+  - ./GW2Achievements
+  - ./GW2AchievementsBusinessLogic
+templates:
+  - ./SourceryTemplates
+output:
+  ./Generated
