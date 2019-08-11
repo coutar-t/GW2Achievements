@@ -22,6 +22,15 @@
 		7838426E23005CBB00B88859 /* AchievementsListRepositoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838426D23005CBB00B88859 /* AchievementsListRepositoryProtocols.swift */; };
 		7838427A2300629500B88859 /* AchievementsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783842792300629500B88859 /* AchievementsListInteractorTests.swift */; };
 		7838427C230062AF00B88859 /* AchievementsListInteractorModuleFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838427B230062AF00B88859 /* AchievementsListInteractorModuleFactoryTests.swift */; };
+		787833A923009E6200854F68 /* CurrentAchievementRepositoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833A823009E6200854F68 /* CurrentAchievementRepositoryProtocols.swift */; };
+		787833AB23009E6A00854F68 /* CurrentAchievementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833AA23009E6A00854F68 /* CurrentAchievementRepository.swift */; };
+		787833AD23009F5300854F68 /* CurrentAchievementRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833AC23009F5300854F68 /* CurrentAchievementRepositoryTests.swift */; };
+		787833B02300A20D00854F68 /* AchievementDetailInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833AF2300A20D00854F68 /* AchievementDetailInteractorInput.swift */; };
+		787833B22300A21500854F68 /* AchievementDetailInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833B12300A21500854F68 /* AchievementDetailInteractorOutput.swift */; };
+		787833B42300A21B00854F68 /* AchievementDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833B32300A21B00854F68 /* AchievementDetailInteractor.swift */; };
+		787833B62300A22400854F68 /* AchievementDetailInteractorModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833B52300A22400854F68 /* AchievementDetailInteractorModuleFactory.swift */; };
+		787833B92300A49700854F68 /* AchievementDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833B82300A49700854F68 /* AchievementDetailInteractorTests.swift */; };
+		787833D62300B3CD00854F68 /* AchievementDetailModuleFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833D52300B3CD00854F68 /* AchievementDetailModuleFactoryTests.swift */; };
 		7881F72B22FDFE9C0032A40D /* GW2AchievementsBusinessLogic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881F72122FDFE9C0032A40D /* GW2AchievementsBusinessLogic.framework */; };
 		7881F73222FDFE9C0032A40D /* GW2AchievementsBusinessLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = 7881F72422FDFE9C0032A40D /* GW2AchievementsBusinessLogic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7881F73E22FE06680032A40D /* CategoriesGroupsListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881F73D22FE06680032A40D /* CategoriesGroupsListInteractorOutput.swift */; };
@@ -55,6 +64,15 @@
 		7838426D23005CBB00B88859 /* AchievementsListRepositoryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListRepositoryProtocols.swift; sourceTree = "<group>"; };
 		783842792300629500B88859 /* AchievementsListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractorTests.swift; sourceTree = "<group>"; };
 		7838427B230062AF00B88859 /* AchievementsListInteractorModuleFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractorModuleFactoryTests.swift; sourceTree = "<group>"; };
+		787833A823009E6200854F68 /* CurrentAchievementRepositoryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAchievementRepositoryProtocols.swift; sourceTree = "<group>"; };
+		787833AA23009E6A00854F68 /* CurrentAchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAchievementRepository.swift; sourceTree = "<group>"; };
+		787833AC23009F5300854F68 /* CurrentAchievementRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAchievementRepositoryTests.swift; sourceTree = "<group>"; };
+		787833AF2300A20D00854F68 /* AchievementDetailInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailInteractorInput.swift; sourceTree = "<group>"; };
+		787833B12300A21500854F68 /* AchievementDetailInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailInteractorOutput.swift; sourceTree = "<group>"; };
+		787833B32300A21B00854F68 /* AchievementDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailInteractor.swift; sourceTree = "<group>"; };
+		787833B52300A22400854F68 /* AchievementDetailInteractorModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailInteractorModuleFactory.swift; sourceTree = "<group>"; };
+		787833B82300A49700854F68 /* AchievementDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailInteractorTests.swift; sourceTree = "<group>"; };
+		787833D52300B3CD00854F68 /* AchievementDetailModuleFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailModuleFactoryTests.swift; sourceTree = "<group>"; };
 		7881F72122FDFE9C0032A40D /* GW2AchievementsBusinessLogic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GW2AchievementsBusinessLogic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7881F72422FDFE9C0032A40D /* GW2AchievementsBusinessLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GW2AchievementsBusinessLogic.h; sourceTree = "<group>"; };
 		7881F72522FDFE9C0032A40D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +149,8 @@
 				7838424022FF0AA200B88859 /* CategoriesGroupsListRepositoryInput.swift */,
 				7838425F230059C600B88859 /* CurrentCategoryRepository.swift */,
 				7838425D230058D600B88859 /* CurrentCategoryRepositoryProtocols.swift */,
+				787833A823009E6200854F68 /* CurrentAchievementRepositoryProtocols.swift */,
+				787833AA23009E6A00854F68 /* CurrentAchievementRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -139,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				7838426223005A7C00B88859 /* CurrentCategoryRepositoryTests.swift */,
+				787833AC23009F5300854F68 /* CurrentAchievementRepositoryTests.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -161,6 +182,26 @@
 				7838427B230062AF00B88859 /* AchievementsListInteractorModuleFactoryTests.swift */,
 			);
 			path = AchievementsList;
+			sourceTree = "<group>";
+		};
+		787833AE2300A1ED00854F68 /* AchievementDetail */ = {
+			isa = PBXGroup;
+			children = (
+				787833AF2300A20D00854F68 /* AchievementDetailInteractorInput.swift */,
+				787833B12300A21500854F68 /* AchievementDetailInteractorOutput.swift */,
+				787833B32300A21B00854F68 /* AchievementDetailInteractor.swift */,
+				787833B52300A22400854F68 /* AchievementDetailInteractorModuleFactory.swift */,
+			);
+			path = AchievementDetail;
+			sourceTree = "<group>";
+		};
+		787833B72300A47600854F68 /* AchievementDetail */ = {
+			isa = PBXGroup;
+			children = (
+				787833B82300A49700854F68 /* AchievementDetailInteractorTests.swift */,
+				787833D52300B3CD00854F68 /* AchievementDetailModuleFactoryTests.swift */,
+			);
+			path = AchievementDetail;
 			sourceTree = "<group>";
 		};
 		7881F71722FDFE9C0032A40D = {
@@ -186,6 +227,7 @@
 		7881F72322FDFE9C0032A40D /* GW2AchievementsBusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				787833AE2300A1ED00854F68 /* AchievementDetail */,
 				7838426423005B6C00B88859 /* AchievementsList */,
 				7881F73C22FE06500032A40D /* CategoriesGroupsList */,
 				7881F72422FDFE9C0032A40D /* GW2AchievementsBusinessLogic.h */,
@@ -198,6 +240,7 @@
 		7881F72E22FDFE9C0032A40D /* GW2AchievementsBusinessLogicTests */ = {
 			isa = PBXGroup;
 			children = (
+				787833B72300A47600854F68 /* AchievementDetail */,
 				783842782300614800B88859 /* AchievementsList */,
 				7836C00222FEC6CB00FF984F /* CategoriesGroupsList */,
 				7836C00022FEC65100FF984F /* Generated */,
@@ -373,13 +416,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7838426A23005B9B00B88859 /* AchievementsListInteractor.swift in Sources */,
+				787833AB23009E6A00854F68 /* CurrentAchievementRepository.swift in Sources */,
 				7838426E23005CBB00B88859 /* AchievementsListRepositoryProtocols.swift in Sources */,
 				7838425E230058D600B88859 /* CurrentCategoryRepositoryProtocols.swift in Sources */,
 				78384260230059C600B88859 /* CurrentCategoryRepository.swift in Sources */,
+				787833A923009E6200854F68 /* CurrentAchievementRepositoryProtocols.swift in Sources */,
 				7881F74222FEBC230032A40D /* CategoriesGroupsListInteractor.swift in Sources */,
+				787833B42300A21B00854F68 /* AchievementDetailInteractor.swift in Sources */,
 				7838426C23005BA500B88859 /* AchievementsListInteractorModuleFactory.swift in Sources */,
 				7838426623005B8A00B88859 /* AchievementsListInteractorInput.swift in Sources */,
 				7838424122FF0AA200B88859 /* CategoriesGroupsListRepositoryInput.swift in Sources */,
+				787833B22300A21500854F68 /* AchievementDetailInteractorOutput.swift in Sources */,
+				787833B62300A22400854F68 /* AchievementDetailInteractorModuleFactory.swift in Sources */,
+				787833B02300A20D00854F68 /* AchievementDetailInteractorInput.swift in Sources */,
 				7838426823005B9300B88859 /* AchievementsListInteractorOutput.swift in Sources */,
 				7881F73E22FE06680032A40D /* CategoriesGroupsListInteractorOutput.swift in Sources */,
 				7881F74022FEBB190032A40D /* CategoriesGroupsListInteractorInput.swift in Sources */,
@@ -394,9 +443,12 @@
 				78384243230016B700B88859 /* CategoriesGroupsListInteractorModuleFactoryTests.swift in Sources */,
 				7838423F22FF0A4800B88859 /* CategoriesGroupsListInteractorTests.swift in Sources */,
 				7838427A2300629500B88859 /* AchievementsListInteractorTests.swift in Sources */,
+				787833B92300A49700854F68 /* AchievementDetailInteractorTests.swift in Sources */,
+				787833D62300B3CD00854F68 /* AchievementDetailModuleFactoryTests.swift in Sources */,
 				7838427C230062AF00B88859 /* AchievementsListInteractorModuleFactoryTests.swift in Sources */,
 				78A680A822FEC584009D8469 /* AutoMockableBusinessLogic.generated.swift in Sources */,
 				7838426323005A7C00B88859 /* CurrentCategoryRepositoryTests.swift in Sources */,
+				787833AD23009F5300854F68 /* CurrentAchievementRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

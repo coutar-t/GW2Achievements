@@ -18,7 +18,8 @@ public class AchievementsListInteractorModuleFactory: AchievementsListInteractor
 
     public func interactor(repository: AchievementsListRepositoryInput) -> AchievementsListInteractorInput {
         let currentRepository = CurrentCategoryRepository.shared
-        let interactor = AchievementsListInteractor(currentRepository: currentRepository, repository: repository)
+        let currentAchievementRepository = CurrentAchievementRepository.shared
+        let interactor = AchievementsListInteractor(currentRepository: currentRepository, repository: repository, currentAchievementRepository: currentAchievementRepository)
         currentRepository.output = interactor
         repository.output = interactor
 

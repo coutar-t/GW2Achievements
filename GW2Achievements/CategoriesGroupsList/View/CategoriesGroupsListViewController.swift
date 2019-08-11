@@ -18,6 +18,8 @@ class CategoriesGroupsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        categoriesGroupsTableView.estimatedRowHeight = 44
+        categoriesGroupsTableView.rowHeight = UITableView.automaticDimension
         categoriesGroupsTableView.delegate = self
         categoriesGroupsTableView.dataSource = self
     }
@@ -26,6 +28,10 @@ class CategoriesGroupsListViewController: UIViewController {
 extension CategoriesGroupsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.selectRow(for: indexPath.row, at: indexPath.section)
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 

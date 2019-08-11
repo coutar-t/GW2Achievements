@@ -26,6 +26,74 @@ import AppKit
 
 
 
+class AchievementDetailPresenterInputMock: AchievementDetailPresenterInput {
+    var output: AchievementDetailPresenterOutput?
+
+    //MARK: - viewDidLoad
+
+    var viewDidLoadCallsCount = 0
+    var viewDidLoadCalled: Bool {
+        return viewDidLoadCallsCount > 0
+    }
+    var viewDidLoadClosure: (() -> Void)?
+
+    func viewDidLoad() {
+        viewDidLoadCallsCount += 1
+        viewDidLoadClosure?()
+    }
+
+}
+class AchievementDetailPresenterOutputMock: AchievementDetailPresenterOutput {
+
+    //MARK: - updateView
+
+    var updateViewAchievementCallsCount = 0
+    var updateViewAchievementCalled: Bool {
+        return updateViewAchievementCallsCount > 0
+    }
+    var updateViewAchievementReceivedAchievement: AchievementDetailViewModelProtocol?
+    var updateViewAchievementReceivedInvocations: [AchievementDetailViewModelProtocol] = []
+    var updateViewAchievementClosure: ((AchievementDetailViewModelProtocol) -> Void)?
+
+    func updateView(achievement: AchievementDetailViewModelProtocol) {
+        updateViewAchievementCallsCount += 1
+        updateViewAchievementReceivedAchievement = achievement
+        updateViewAchievementReceivedInvocations.append(achievement)
+        updateViewAchievementClosure?(achievement)
+    }
+
+}
+class AchievementDetailViewModelProtocolMock: AchievementDetailViewModelProtocol {
+    var name: NSAttributedString {
+        get { return underlyingName }
+        set(value) { underlyingName = value }
+    }
+    var underlyingName: NSAttributedString!
+    var description: NSAttributedString {
+        get { return underlyingDescription }
+        set(value) { underlyingDescription = value }
+    }
+    var underlyingDescription: NSAttributedString!
+    var iconUrl: String {
+        get { return underlyingIconUrl }
+        set(value) { underlyingIconUrl = value }
+    }
+    var underlyingIconUrl: String!
+    var requirement: NSAttributedString {
+        get { return underlyingRequirement }
+        set(value) { underlyingRequirement = value }
+    }
+    var underlyingRequirement: NSAttributedString!
+
+    init() {}
+
+    init(name: NSAttributedString, description: NSAttributedString, iconUrl: String, requirement: NSAttributedString) {
+      self.name = name
+      self.description = description
+      self.iconUrl = iconUrl
+      self.requirement = requirement
+    }
+}
 class AchievementViewModelProtocolMock: AchievementViewModelProtocol {
     var title: NSAttributedString {
         get { return underlyingTitle }
@@ -111,6 +179,23 @@ class AchievementsListPresenterInputMock: AchievementsListPresenterInput {
         return viewModelForAtClosure.map({ $0(row, section) }) ?? viewModelForAtReturnValue
     }
 
+    //MARK: - selectRow
+
+    var selectRowForAtCallsCount = 0
+    var selectRowForAtCalled: Bool {
+        return selectRowForAtCallsCount > 0
+    }
+    var selectRowForAtReceivedArguments: (row: Int, section: Int)?
+    var selectRowForAtReceivedInvocations: [(row: Int, section: Int)] = []
+    var selectRowForAtClosure: ((Int, Int) -> Void)?
+
+    func selectRow(for row: Int, at section: Int) {
+        selectRowForAtCallsCount += 1
+        selectRowForAtReceivedArguments = (row: row, section: section)
+        selectRowForAtReceivedInvocations.append((row: row, section: section))
+        selectRowForAtClosure?(row, section)
+    }
+
 }
 class AchievementsListPresenterOutputMock: AchievementsListPresenterOutput {
 
@@ -185,6 +270,22 @@ class AchievementsListPresenterOutputMock: AchievementsListPresenterOutput {
         showErrorWithRetryMessageReceivedArguments = (message: message, retryMessage: retryMessage)
         showErrorWithRetryMessageReceivedInvocations.append((message: message, retryMessage: retryMessage))
         showErrorWithRetryMessageClosure?(message, retryMessage)
+    }
+
+}
+class AchievementsListRouterProtocolMock: AchievementsListRouterProtocol {
+
+    //MARK: - routeToAchievementDetail
+
+    var routeToAchievementDetailCallsCount = 0
+    var routeToAchievementDetailCalled: Bool {
+        return routeToAchievementDetailCallsCount > 0
+    }
+    var routeToAchievementDetailClosure: (() -> Void)?
+
+    func routeToAchievementDetail() {
+        routeToAchievementDetailCallsCount += 1
+        routeToAchievementDetailClosure?()
     }
 
 }
@@ -285,6 +386,23 @@ class CategoriesGroupsListPresenterInputMock: CategoriesGroupsListPresenterInput
         return viewModelForAtClosure.map({ $0(row, section) }) ?? viewModelForAtReturnValue
     }
 
+    //MARK: - selectRow
+
+    var selectRowForAtCallsCount = 0
+    var selectRowForAtCalled: Bool {
+        return selectRowForAtCallsCount > 0
+    }
+    var selectRowForAtReceivedArguments: (row: Int, section: Int)?
+    var selectRowForAtReceivedInvocations: [(row: Int, section: Int)] = []
+    var selectRowForAtClosure: ((Int, Int) -> Void)?
+
+    func selectRow(for row: Int, at section: Int) {
+        selectRowForAtCallsCount += 1
+        selectRowForAtReceivedArguments = (row: row, section: section)
+        selectRowForAtReceivedInvocations.append((row: row, section: section))
+        selectRowForAtClosure?(row, section)
+    }
+
 }
 class CategoriesGroupsListPresenterOutputMock: CategoriesGroupsListPresenterOutput {
 
@@ -359,6 +477,22 @@ class CategoriesGroupsListPresenterOutputMock: CategoriesGroupsListPresenterOutp
         showErrorWithRetryMessageReceivedArguments = (message: message, retryMessage: retryMessage)
         showErrorWithRetryMessageReceivedInvocations.append((message: message, retryMessage: retryMessage))
         showErrorWithRetryMessageClosure?(message, retryMessage)
+    }
+
+}
+class CategoriesGroupsListRouterProtocolMock: CategoriesGroupsListRouterProtocol {
+
+    //MARK: - routeToAchievementsList
+
+    var routeToAchievementsListCallsCount = 0
+    var routeToAchievementsListCalled: Bool {
+        return routeToAchievementsListCallsCount > 0
+    }
+    var routeToAchievementsListClosure: (() -> Void)?
+
+    func routeToAchievementsList() {
+        routeToAchievementsListCallsCount += 1
+        routeToAchievementsListClosure?()
     }
 
 }

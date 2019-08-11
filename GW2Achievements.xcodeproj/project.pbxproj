@@ -52,6 +52,18 @@
 		786ED94222FDF326004311B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786ED94122FDF326004311B1 /* Assets.xcassets */; };
 		786ED94522FDF326004311B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786ED94322FDF326004311B1 /* LaunchScreen.storyboard */; };
 		786ED95B22FDF326004311B1 /* GW2_AchievementsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ED95A22FDF326004311B1 /* GW2_AchievementsUITests.swift */; };
+		787833BF2300A6F000854F68 /* AchievementDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 787833BE2300A6F000854F68 /* AchievementDetailViewController.storyboard */; };
+		787833C12300A76400854F68 /* AchievementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833C02300A76400854F68 /* AchievementDetailViewController.swift */; };
+		787833C32300A85700854F68 /* AchievementDetailRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833C22300A85700854F68 /* AchievementDetailRouterProtocol.swift */; };
+		787833C52300A85E00854F68 /* AchievementDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833C42300A85E00854F68 /* AchievementDetailRouter.swift */; };
+		787833C72300A8AB00854F68 /* AchievementDetailPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833C62300A8AB00854F68 /* AchievementDetailPresenterInput.swift */; };
+		787833C92300A8B300854F68 /* AchievementDetailPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833C82300A8B300854F68 /* AchievementDetailPresenterOutput.swift */; };
+		787833CB2300A8BC00854F68 /* AchievementDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833CA2300A8BC00854F68 /* AchievementDetailPresenter.swift */; };
+		787833CE2300AA5800854F68 /* AchievementDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833CD2300AA5800854F68 /* AchievementDetailPresenterTests.swift */; };
+		787833D02300AD7E00854F68 /* AchievementDetailModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833CF2300AD7E00854F68 /* AchievementDetailModuleFactory.swift */; };
+		787833D22300AE6400854F68 /* AchievementsListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833D12300AE6400854F68 /* AchievementsListRouterProtocol.swift */; };
+		787833D42300AE6A00854F68 /* AchievementsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833D32300AE6A00854F68 /* AchievementsListRouter.swift */; };
+		787833D82300B61800854F68 /* AchievementDetailModuleFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787833D72300B61800854F68 /* AchievementDetailModuleFactoryTests.swift */; };
 		7DDAFE9F6B63CBB32F701DBF /* Pods_GW2Achievements.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EF3190F9BE3BBD46358D2B /* Pods_GW2Achievements.framework */; };
 		C5A5CE708C20FCB0F2E4E250 /* libPods-Tests-GW2AchievementsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2D782151C65EB0DAD96D5C /* libPods-Tests-GW2AchievementsTests.a */; };
 /* End PBXBuildFile section */
@@ -131,6 +143,18 @@
 		786ED95622FDF326004311B1 /* GW2AchievementsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GW2AchievementsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		786ED95A22FDF326004311B1 /* GW2_AchievementsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GW2_AchievementsUITests.swift; sourceTree = "<group>"; };
 		786ED95C22FDF326004311B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		787833BE2300A6F000854F68 /* AchievementDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AchievementDetailViewController.storyboard; sourceTree = "<group>"; };
+		787833C02300A76400854F68 /* AchievementDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailViewController.swift; sourceTree = "<group>"; };
+		787833C22300A85700854F68 /* AchievementDetailRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailRouterProtocol.swift; sourceTree = "<group>"; };
+		787833C42300A85E00854F68 /* AchievementDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailRouter.swift; sourceTree = "<group>"; };
+		787833C62300A8AB00854F68 /* AchievementDetailPresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailPresenterInput.swift; sourceTree = "<group>"; };
+		787833C82300A8B300854F68 /* AchievementDetailPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailPresenterOutput.swift; sourceTree = "<group>"; };
+		787833CA2300A8BC00854F68 /* AchievementDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailPresenter.swift; sourceTree = "<group>"; };
+		787833CD2300AA5800854F68 /* AchievementDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailPresenterTests.swift; sourceTree = "<group>"; };
+		787833CF2300AD7E00854F68 /* AchievementDetailModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailModuleFactory.swift; sourceTree = "<group>"; };
+		787833D12300AE6400854F68 /* AchievementsListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListRouterProtocol.swift; sourceTree = "<group>"; };
+		787833D32300AE6A00854F68 /* AchievementsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListRouter.swift; sourceTree = "<group>"; };
+		787833D72300B61800854F68 /* AchievementDetailModuleFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailModuleFactoryTests.swift; sourceTree = "<group>"; };
 		CB129BC2CCD356F1A5E77A88 /* Pods-GW2Achievements.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GW2Achievements.debug.xcconfig"; path = "Target Support Files/Pods-GW2Achievements/Pods-GW2Achievements.debug.xcconfig"; sourceTree = "<group>"; };
 		CF70122A8EA895E138A6A36A /* Pods-GW2AchievementsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GW2AchievementsTests.debug.xcconfig"; path = "Target Support Files/Pods-GW2AchievementsTests/Pods-GW2AchievementsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F33F18F42B2C6D0E5DD0F333 /* Pods-Tests-GW2AchievementsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-GW2AchievementsTests.debug.xcconfig"; path = "Target Support Files/Pods-Tests-GW2AchievementsTests/Pods-Tests-GW2AchievementsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -322,6 +346,8 @@
 		7838427E23006ECC00B88859 /* router */ = {
 			isa = PBXGroup;
 			children = (
+				787833D12300AE6400854F68 /* AchievementsListRouterProtocol.swift */,
+				787833D32300AE6A00854F68 /* AchievementsListRouter.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -399,6 +425,7 @@
 		786ED93922FDF323004311B1 /* GW2Achievements */ = {
 			isa = PBXGroup;
 			children = (
+				787833BA2300A6BB00854F68 /* AchievementDetail */,
 				7838427D23006EC000B88859 /* AchievementsList */,
 				7838422E22FF023500B88859 /* APIWrapper */,
 				786ED93A22FDF323004311B1 /* AppDelegate.swift */,
@@ -417,6 +444,7 @@
 		786ED94E22FDF326004311B1 /* GW2AchievementsTests */ = {
 			isa = PBXGroup;
 			children = (
+				787833CC2300AA4200854F68 /* AchievementDetail */,
 				783842902300722D00B88859 /* AchievementsList */,
 				78384248230021C100B88859 /* CategoriesGroupsList */,
 				7836C00122FEC66F00FF984F /* Generated */,
@@ -432,6 +460,54 @@
 				786ED95C22FDF326004311B1 /* Info.plist */,
 			);
 			path = GW2AchievementsUITests;
+			sourceTree = "<group>";
+		};
+		787833BA2300A6BB00854F68 /* AchievementDetail */ = {
+			isa = PBXGroup;
+			children = (
+				787833BD2300A6D000854F68 /* view */,
+				787833BC2300A6CB00854F68 /* router */,
+				787833BB2300A6C400854F68 /* presenter */,
+				787833CF2300AD7E00854F68 /* AchievementDetailModuleFactory.swift */,
+			);
+			path = AchievementDetail;
+			sourceTree = "<group>";
+		};
+		787833BB2300A6C400854F68 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				787833C62300A8AB00854F68 /* AchievementDetailPresenterInput.swift */,
+				787833C82300A8B300854F68 /* AchievementDetailPresenterOutput.swift */,
+				787833CA2300A8BC00854F68 /* AchievementDetailPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		787833BC2300A6CB00854F68 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				787833C22300A85700854F68 /* AchievementDetailRouterProtocol.swift */,
+				787833C42300A85E00854F68 /* AchievementDetailRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		787833BD2300A6D000854F68 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				787833BE2300A6F000854F68 /* AchievementDetailViewController.storyboard */,
+				787833C02300A76400854F68 /* AchievementDetailViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		787833CC2300AA4200854F68 /* AchievementDetail */ = {
+			isa = PBXGroup;
+			children = (
+				787833CD2300AA5800854F68 /* AchievementDetailPresenterTests.swift */,
+				787833D72300B61800854F68 /* AchievementDetailModuleFactoryTests.swift */,
+			);
+			path = AchievementDetail;
 			sourceTree = "<group>";
 		};
 		91669C25B83EC9265CA69F9B /* Pods */ = {
@@ -560,6 +636,7 @@
 				7838424D2300335E00B88859 /* Localizable.strings in Resources */,
 				7838422122FEFC6D00B88859 /* CategoriesGroupsListViewController.storyboard in Resources */,
 				786ED94222FDF326004311B1 /* Assets.xcassets in Resources */,
+				787833BF2300A6F000854F68 /* AchievementDetailViewController.storyboard in Resources */,
 				7838428B23006FC800B88859 /* AchievementsListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,7 +764,10 @@
 			files = (
 				7838428323006F8A00B88859 /* AchievementsListModuleFactory.swift in Sources */,
 				7838428D2300700C00B88859 /* AchievementsListViewController.swift in Sources */,
+				787833D22300AE6400854F68 /* AchievementsListRouterProtocol.swift in Sources */,
+				787833CB2300A8BC00854F68 /* AchievementDetailPresenter.swift in Sources */,
 				783842552300461700B88859 /* AchievementCategoryItem.swift in Sources */,
+				787833C12300A76400854F68 /* AchievementDetailViewController.swift in Sources */,
 				7838427523005EC700B88859 /* AchievementItem.swift in Sources */,
 				7838422322FEFEE200B88859 /* CategoriesGroupsListViewController.swift in Sources */,
 				7838427123005E3400B88859 /* GetAchievementsListProtocol.swift in Sources */,
@@ -700,21 +780,27 @@
 				785C9F5222FDFC2A00849DE2 /* CategoriesGroupsListPresenter.swift in Sources */,
 				7838425323003EDF00B88859 /* CategoriesGroupsListCell.swift in Sources */,
 				7838421C22FEFAB800B88859 /* CategoriesGroupsListPresenterInput.swift in Sources */,
+				787833C92300A8B300854F68 /* AchievementDetailPresenterOutput.swift in Sources */,
 				7838422B22FF008100B88859 /* Storyboard Scenes.swift in Sources */,
 				7838423022FF025100B88859 /* APIWrapperProtocol.swift in Sources */,
 				7838427723005FCA00B88859 /* AchievementsListRepository.swift in Sources */,
 				786ED93B22FDF323004311B1 /* AppDelegate.swift in Sources */,
+				787833D42300AE6A00854F68 /* AchievementsListRouter.swift in Sources */,
 				7838428723006FAB00B88859 /* AchievementsListPresenterInput.swift in Sources */,
 				7838422622FEFFA400B88859 /* CategoriesGroupsListModuleFactory.swift in Sources */,
 				783842962300807B00B88859 /* CategoriesGroupsListRouterProtocol.swift in Sources */,
 				7838428523006FA300B88859 /* AchievementsListPresenter.swift in Sources */,
+				787833C72300A8AB00854F68 /* AchievementDetailPresenterInput.swift in Sources */,
 				7838423D22FF09AD00B88859 /* LocaleProtocol.swift in Sources */,
 				7838428F2300707200B88859 /* AchievementsListCell.swift in Sources */,
 				7838421E22FEFAC000B88859 /* CategoriesGroupsListPresenterOutput.swift in Sources */,
+				787833C32300A85700854F68 /* AchievementDetailRouterProtocol.swift in Sources */,
+				787833D02300AD7E00854F68 /* AchievementDetailModuleFactory.swift in Sources */,
 				7838423A22FF07F600B88859 /* GetCategoriesGroupsListAPIWrapper.swift in Sources */,
 				7838423522FF05D400B88859 /* APIWrapper.swift in Sources */,
 				783842982300808100B88859 /* CategoriesGroupsListRouter.swift in Sources */,
 				7838425A230046C200B88859 /* GetAchievementsCategoriesListAPIWrapper.swift in Sources */,
+				787833C52300A85E00854F68 /* AchievementDetailRouter.swift in Sources */,
 				7838423822FF065500B88859 /* GetCategoriesGroupsListAPIWrapperProtocol.swift in Sources */,
 				7838423322FF054300B88859 /* AchievementCategorisGroupItem.swift in Sources */,
 			);
@@ -725,7 +811,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				783842922300724D00B88859 /* AchievementsListPresenterTests.swift in Sources */,
+				787833D82300B61800854F68 /* AchievementDetailModuleFactoryTests.swift in Sources */,
 				7836BFFD22FEC64000FF984F /* AutoMockable.generated.swift in Sources */,
+				787833CE2300AA5800854F68 /* AchievementDetailPresenterTests.swift in Sources */,
 				7838429423007A7900B88859 /* AchievementsListModuleFactoryTests.swift in Sources */,
 				7836BFFF22FEC64D00FF984F /* AutoMockableBusinessLogic.generated.swift in Sources */,
 				7838425C230056D100B88859 /* CategoriesGroupsListModuleFactoryTests.swift in Sources */,

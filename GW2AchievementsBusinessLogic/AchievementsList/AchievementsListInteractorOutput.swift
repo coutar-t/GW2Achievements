@@ -18,4 +18,5 @@ public protocol AchievementsListInteractorOutput: class {
     func notifyNetworkError()
     func notifyUnknownError()
     func notifyNoDataError()
+    func routeToAchievementDetail()
 }

@@ -1,5 +1,5 @@
 //
-//  CategoriesGroupsListRouterProtocol.swift
+//  AchievementDetailRouter.swift
 //  GW2Achievements
 //
 //  Created by Thibaut Coutard on 11/08/2019.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-// sourcery: AutoMockable
-protocol CategoriesGroupsListRouterProtocol {
-    func routeToAchievementsList()
+class AchievementDetailRouter: AchievementDetailRouterProtocol {
+    
 }

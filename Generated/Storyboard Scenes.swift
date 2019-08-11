@@ -12,6 +12,11 @@ import UIKit
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum StoryboardScene {
+  internal enum AchievementDetailViewController: StoryboardType {
+    internal static let storyboardName = "AchievementDetailViewController"
+
+    internal static let achievementDetailViewController = SceneType<GW2Achievements.AchievementDetailViewController>(storyboard: AchievementDetailViewController.self, identifier: "AchievementDetailViewController")
+  }
   internal enum AchievementsListViewController: StoryboardType {
     internal static let storyboardName = "AchievementsListViewController"
 

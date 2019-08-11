@@ -22,7 +22,10 @@ class AchievementListModuleFactory {
 
         let interactor = AchievementsListInteractorModuleFactory().interactor(repository: repository)
 
-        let presenter = AchievementsListPresenter(interactor: interactor)
+let router = AchievementsListRouter()
+        router.parentViewController = viewController
+
+        let presenter = AchievementsListPresenter(interactor: interactor, router: router)
         presenter.output = viewController
         interactor.output = presenter
         viewController.presenter = presenter

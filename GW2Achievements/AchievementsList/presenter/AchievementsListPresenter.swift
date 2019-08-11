@@ -11,10 +11,13 @@ import GW2AchievementsBusinessLogic
 
 class AchievementsListPresenter {
     weak var output: AchievementsListPresenterOutput?
-    private var interactor: AchievementsListInteractorInput
+    private let interactor: AchievementsListInteractorInput
+    private let router: AchievementsListRouterProtocol
 
-    init(interactor: AchievementsListInteractorInput) {
+    init(interactor: AchievementsListInteractorInput,
+         router: AchievementsListRouterProtocol) {
         self.interactor = interactor
+        self.router = router
     }
 
 }
@@ -38,7 +41,10 @@ extension AchievementsListPresenter: AchievementsListPresenterInput {
         return AchievementViewModel(title: NSAttributedString(string: "", attributes: [.font: UIFont.preferredFont(forTextStyle: .title1)]), iconUrl: "")
         }
         return AchievementViewModel(title: NSAttributedString(string: item.name, attributes: [.font: UIFont.preferredFont(forTextStyle: .title1)]), iconUrl: item.iconUrl ?? "")
+    }
 
+    func selectRow(for row: Int, at section: Int) {
+        interactor.selectAchievement(at: row, for: section)
     }
 }
 
@@ -54,6 +60,10 @@ extension AchievementsListPresenter: AchievementsListInteractorOutput {
     func updateAchievementsList() {
         output?.hideLoading()
         output?.updateAchievementsList()
+    }
+
+    func routeToAchievementDetail() {
+        router.routeToAchievementDetail()
     }
 
     func notifyLoading() {

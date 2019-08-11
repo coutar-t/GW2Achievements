@@ -22,4 +22,5 @@ public protocol AchievementsListInteractorInput: class {
     func numberOfCategories() -> Int
     func numberOfAchievements(for category: Int) -> Int
     func achievement(at index: Int, for category: Int) -> AchievementItemProtocol?
+    func selectAchievement(at index: Int, for category: Int)
 }

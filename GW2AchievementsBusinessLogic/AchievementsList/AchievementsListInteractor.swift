@@ -10,14 +10,17 @@ import Foundation
 
 class AchievementsListInteractor {
     var output: AchievementsListInteractorOutput?
-    private var currentRepository: CurrentCategoryRepositoryInput
-    private var repository: AchievementsListRepositoryInput
-    private var achievements: [AchievementItemProtocol] = []
+    private let currentRepository: CurrentCategoryRepositoryInput
+    private let currentAchievementRepository: CurrentAchievementRepositoryInput
+    private let repository: AchievementsListRepositoryInput
+    private var achievements: [AchievementItem] = []
 
     init(currentRepository: CurrentCategoryRepositoryInput,
-         repository: AchievementsListRepositoryInput) {
+         repository: AchievementsListRepositoryInput,
+         currentAchievementRepository: CurrentAchievementRepositoryInput) {
         self.currentRepository = currentRepository
         self.repository = repository
+        self.currentAchievementRepository = currentAchievementRepository
     }
 }
 
@@ -45,6 +48,16 @@ extension AchievementsListInteractor: AchievementsListInteractorInput {
         }
         return achievements[index]
     }
+
+    func selectAchievement(at index: Int, for category: Int) {
+        guard category == 0,
+            index < achievements.count else {
+                return
+        }
+        let achievement = achievements[index]
+        currentAchievementRepository.save(currentAchievement: CurrentAchievementRepositoryRequest(name: achievement.name, description: achievement.description, requirement: achievement.requirement, iconUrl: achievement.iconUrl))
+        output?.routeToAchievementDetail()
+    }
 }
 
 extension AchievementsListInteractor: CurrentCategoryRepositoryOutput {
@@ -64,7 +77,7 @@ extension AchievementsListInteractor: AchievementsListRepositoryOutput {
             output?.notifyNoDataError()
             return
         }
-        self.achievements = achievements.map({ AchievementItem(name: $0.name, iconUrl: $0.iconUrl) })
+        self.achievements = achievements.map({ AchievementItem(name: $0.name, iconUrl: $0.iconUrl, description: $0.description, requirement: $0.requirement) })
         output?.updateAchievementsList()
     }
 
@@ -82,5 +95,14 @@ extension AchievementsListInteractor: AchievementsListRepositoryOutput {
 
 private struct AchievementItem: AchievementItemProtocol {
     var name: String
+    var iconUrl: String?
+    var description: String
+    var requirement: String
+}
+
+private struct CurrentAchievementRepositoryRequest: CurrentAchievementRepositoryRequestProtocol {
+    var name: String
+    var description: String
+    var requirement: String
     var iconUrl: String?
 }

@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9U-mz-Jef">
-                                                    <rect key="frame" x="60" y="10" width="344" height="20.5"/>
+                                                    <rect key="frame" x="60" y="10" width="344" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="1dH-6R-vdW" secondAttribute="bottom" constant="10" id="1rO-pp-UlM"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1dH-6R-vdW" secondAttribute="bottom" priority="750" constant="10" id="1rO-pp-UlM"/>
                                                 <constraint firstAttribute="trailing" secondItem="Q9U-mz-Jef" secondAttribute="trailing" constant="10" id="4II-fQ-9TC"/>
                                                 <constraint firstItem="Q9U-mz-Jef" firstAttribute="top" secondItem="jm8-kv-lSS" secondAttribute="top" constant="10" id="5KL-BM-DMs"/>
                                                 <constraint firstAttribute="bottom" secondItem="Q9U-mz-Jef" secondAttribute="bottom" constant="10" id="I1z-gk-kQ5"/>

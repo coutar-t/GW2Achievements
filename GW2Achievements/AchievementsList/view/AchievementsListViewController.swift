@@ -20,7 +20,17 @@ class AchievementsListViewController: UIViewController {
         super.viewDidLoad()
 
         achievementsTableView.dataSource = self
+        achievementsTableView.delegate = self
         presenter.viewDidLoad()
+
+        achievementsTableView.estimatedRowHeight = 44
+        achievementsTableView.rowHeight = UITableView.automaticDimension
+    }
+}
+
+extension AchievementsListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectRow(for: indexPath.row, at: indexPath.section)
     }
 }
 

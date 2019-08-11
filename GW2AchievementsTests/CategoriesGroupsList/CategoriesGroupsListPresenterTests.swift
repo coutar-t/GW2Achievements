@@ -15,12 +15,15 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
     var presenter: CategoriesGroupsListPresenter!
     var interactorMock: CategoriesGroupsListInteractorInputMock!
     var outputMock: CategoriesGroupsListPresenterOutputMock!
+    var routerMock: CategoriesGroupsListRouterProtocolMock!
 
     override func setUp() {
         super.setUp()
 
         interactorMock = CategoriesGroupsListInteractorInputMock()
-        presenter = CategoriesGroupsListPresenter(interactor: interactorMock)
+        routerMock = CategoriesGroupsListRouterProtocolMock()
+        presenter = CategoriesGroupsListPresenter(interactor: interactorMock,
+                                                  router: routerMock)
         outputMock = CategoriesGroupsListPresenterOutputMock()
         presenter.output = outputMock
     }
@@ -45,6 +48,8 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
+
     }
 
     // MARK: - NumberOfSections
@@ -72,6 +77,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     // MARK: - NumberOfCategoriesGroups
@@ -100,6 +106,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     // MARK: - SectionViewModel
@@ -130,6 +137,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     func test_givenItem_whenSectionViewModel_thenReturnViewModel() {
@@ -158,6 +166,8 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
+
     }
 
     // MARK: - ViewModel
@@ -189,6 +199,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     func test_givenItem_whenViewModel_thenReturnViewModel() {
@@ -218,6 +229,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     // MARK: - SetDefaultValues
@@ -241,6 +253,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     // MARK: - UpdateCategoriesGroupsList
@@ -264,6 +277,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     func test_whenNotifyLoading_thenOutputShowLoading() {
@@ -285,6 +299,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
 
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     func test_whenNotifyServerError_thenOutputHideLoadingAndShowError() {
@@ -308,6 +323,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
 
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     func test_whenNotifyNetworkError_thenOutputHideLoadingAndShowError() {
@@ -331,6 +347,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
 
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     func test_whenNotifyUnknownError_thenOutputHideLoadingAndShowError() {
@@ -354,6 +371,7 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
 
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
     }
 
     func test_whenNotifyNoDataError_thenOutputHideLoadingAndUpdateCategories() {
@@ -374,6 +392,59 @@ class CategoriesGroupsListPresenterTests: XCTestCase {
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
 
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
+    }
+
+    // MARK: - RouteToAchievementsList
+
+    func test_whenRouteToAchievementsList_thenRouterRouteToAchievementsList() {
+        // When
+
+        presenter.routeToAchievementsList()
+
+        // Then
+        expect(self.routerMock.routeToAchievementsListCallsCount).to(equal(1))
+
+        expect(self.outputMock.hideLoadingCalled).to(beFalse())
+        expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
+        expect(self.interactorMock.retrieveCalled).to(beFalse())
+        expect(self.interactorMock.categoryAtForCalled).to(beFalse())
+        expect(self.interactorMock.categoryGroupForCalled).to(beFalse())
+        expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
+        expect(self.interactorMock.numberOfCategoriesGroupsForCalled).to(beFalse())
+
+        expect(self.outputMock.showLoadingCalled).to(beFalse())
+        expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+
+        expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+    }
+
+    // MARK: - SelectRow
+
+    func test_whenSelectRow_thenInteractorSelectCategory() {
+        // When
+
+        presenter.selectRow(for: 5, at: 6)
+
+        // Then
+
+        expect(self.interactorMock.selectCategoryAtForCallsCount).to(equal(1))
+        expect(self.interactorMock.selectCategoryAtForReceivedArguments?.category).to(equal(6))
+        expect(self.interactorMock.selectCategoryAtForReceivedArguments?.index).to(equal(5))
+        expect(self.outputMock.hideLoadingCalled).to(beFalse())
+        expect(self.outputMock.updateCategoriesGroupsCalled).to(beFalse())
+        expect(self.interactorMock.retrieveCalled).to(beFalse())
+        expect(self.interactorMock.categoryAtForCalled).to(beFalse())
+        expect(self.interactorMock.categoryGroupForCalled).to(beFalse())
+        expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
+        expect(self.interactorMock.numberOfCategoriesGroupsForCalled).to(beFalse())
+
+        expect(self.outputMock.showLoadingCalled).to(beFalse())
+        expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+
+        expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementsListCalled).to(beFalse())
+
     }
 
 }

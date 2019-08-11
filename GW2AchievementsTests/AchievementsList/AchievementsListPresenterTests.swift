@@ -14,12 +14,14 @@ class AchievementsListPresenterTests: XCTestCase {
     var presenter: AchievementsListPresenter!
     var interactorMock: AchievementsListInteractorInputMock!
     var outputMock: AchievementsListPresenterOutputMock!
+    var routerMock: AchievementsListRouterProtocolMock!
 
     override func setUp() {
         super.setUp()
 
         interactorMock = AchievementsListInteractorInputMock()
-        presenter = AchievementsListPresenter(interactor: interactorMock)
+        routerMock = AchievementsListRouterProtocolMock()
+        presenter = AchievementsListPresenter(interactor: interactorMock, router: routerMock)
         outputMock = AchievementsListPresenterOutputMock()
         presenter.output = outputMock
     }
@@ -39,6 +41,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
@@ -65,6 +69,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.retrieveCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
@@ -93,6 +99,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
         expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
@@ -122,7 +130,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.retrieveCalled).to(beFalse())
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
-
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
@@ -151,7 +160,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.retrieveCalled).to(beFalse())
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
-
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
@@ -180,8 +190,34 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.retrieveCalled).to(beFalse())
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
-
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+        expect(self.outputMock.showLoadingCalled).to(beFalse())
+        expect(self.outputMock.hideLoadingCalled).to(beFalse())
+        expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
+        expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+    }
+
+    // MARK: - SelectRow
+
+    func test_whenSelectRow_thenInteractorSelectAchievement() {
+        // When
+
+        presenter.selectRow(for: 2, at: 3)
+
+        // Then
+
+        expect(self.interactorMock.selectAchievementAtForCallsCount).to(equal(1))
+        expect(self.interactorMock.selectAchievementAtForReceivedArguments?.category).to(equal(3))
+        expect(self.interactorMock.selectAchievementAtForReceivedArguments?.index).to(equal(2))
+        expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+
+        expect(self.interactorMock.retrieveCalled).to(beFalse())
+        expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
+        expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
+        expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
         expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
@@ -203,6 +239,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
         expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
@@ -224,6 +262,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
         expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
@@ -245,6 +285,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
@@ -265,6 +307,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.hideLoadingCalled).to(beFalse())
         expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
@@ -289,6 +333,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
@@ -310,6 +356,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
@@ -331,6 +379,8 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
         expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
@@ -350,22 +400,33 @@ class AchievementsListPresenterTests: XCTestCase {
         expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
         expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
         expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.routerMock.routeToAchievementDetailCalled).to(beFalse())
         expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
         expect(self.outputMock.setTitleTitleCalled).to(beFalse())
         expect(self.outputMock.showLoadingCalled).to(beFalse())
     }
+
+    // MARK: - RouteToAchievementDetail
+
+    func test_whenRouteToAchievementDetail_thenRouterRouteToAchievementDetail() {
+        // When
+
+        presenter.routeToAchievementDetail()
+
+        // Then
+
+        expect(self.routerMock.routeToAchievementDetailCallsCount).to(equal(1))
+
+        expect(self.interactorMock.retrieveCalled).to(beFalse())
+        expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
+        expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
+        expect(self.interactorMock.achievementAtForCalled).to(beFalse())
+        expect(self.interactorMock.selectAchievementAtForCalled).to(beFalse())
+        expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
+        expect(self.outputMock.setTitleTitleCalled).to(beFalse())
+        expect(self.outputMock.showLoadingCalled).to(beFalse())
+        expect(self.outputMock.hideLoadingCalled).to(beFalse())
+        expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
+    }
 }
-
-/*
- expect(self.interactorMock.retrieveCalled).to(beFalse())
- expect(self.interactorMock.numberOfCategoriesCalled).to(beFalse())
- expect(self.interactorMock.numberOfAchievementsForCalled).to(beFalse())
- expect(self.interactorMock.achievementAtForCalled).to(beFalse())
-
- expect(self.outputMock.setTitleTitleCalled).to(beFalse())
- expect(self.outputMock.showLoadingCalled).to(beFalse())
- expect(self.outputMock.hideLoadingCalled).to(beFalse())
- expect(self.outputMock.updateAchievementsListCalled).to(beFalse())
- expect(self.outputMock.showErrorWithRetryMessageCalled).to(beFalse())
-
- */

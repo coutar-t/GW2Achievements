@@ -21,4 +21,5 @@ protocol AchievementsListPresenterInput {
     func numberOfSections() -> Int
     func numberOfRows(in section: Int) -> Int
     func viewModel(for row: Int, at section: Int) -> AchievementViewModelProtocol
+    func selectRow(for row: Int, at section: Int)
 }
